@@ -1,0 +1,274 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>oaf-react-router</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">oaf-react-router</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1> oaf-react-router</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p><a href="https://travis-ci.org/danielnixon/oaf-react-router"><img src="https://travis-ci.org/danielnixon/oaf-react-router.svg?branch=master" alt="Build Status"></a>
+					<a href="https://snyk.io/test/github/danielnixon/oaf-react-router?targetFile=package.json"><img src="https://snyk.io/test/github/danielnixon/oaf-react-router/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
+					<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/danielnixon/oaf-react-router.svg" alt="Greenkeeper badge"></a>
+				<img src="https://img.shields.io/npm/v/oaf-react-router.svg" alt="npm"></p>
+				<h1 id="oaf-react-router">Oaf React Router</h1>
+				<p>An accessible wrapper for <a href="https://reacttraining.com/react-router/">React Router</a>.</p>
+				<p>Documentation at <a href="https://danielnixon.github.io/oaf-react-router/">https://danielnixon.github.io/oaf-react-router/</a></p>
+				<h2 id="features">Features</h2>
+				<ul>
+					<li>Reset scroll and focus after PUSH and REPLACE navigation</li>
+					<li>Restore scroll and focus after POP navigation</li>
+					<li>Set the page title after navigation</li>
+					<li>Announce navigation to users of screen readers</li>
+					<li>Hash fragment support</li>
+				</ul>
+				<h3 id="reset-scroll-and-focus-after-push-and-replace-navigation">Reset scroll and focus after PUSH and REPLACE navigation</h3>
+				<p><a href="https://reacttraining.com/react-router/web/guides/scroll-restoration">React Router does not reset the window&#39;s scroll position or the focused element</a> after page navigation.</p>
+				<p>The React Router documentation sketches a <a href="https://reacttraining.com/react-router/web/guides/scroll-restoration/scroll-to-top">&quot;scroll to top&quot; approach</a> that scrolls the window back to the top of the page after navigation, emulating native browser behavior. There are also packages to do this for you, such as <a href="https://github.com/trevorr/react-scroll-manager">trevorr/react-scroll-manager</a>. Unfortunately, these approaches address only the scroll half of the question, <a href="http://simplyaccessible.com/article/spangular-accessibility/#acc-heading-3">ignoring keyboard focus</a>:</p>
+				<blockquote>
+					<p>One of the unique features of single page applications that can create challenges for people using screen readers is that there’s never a page refresh, only view refreshes. As a result, the focused element often disappears from the interface, and the person using the screen reader is left searching for clues as to what happened and what’s now showing in the application view. Places where focus is commonly lost include: page changes, item deleting, modal closing, and expanding and closing record details.</p>
+				</blockquote>
+				<p>Oaf React Router fixes this by moving focus to something it calls the &quot;primary focus target&quot; after navigation, which by default is the first <code>h1</code> element inside the page&#39;s <code>main</code> element, but this is configurable.</p>
+				<p>In addition to moving focus, Oaf React Router will also scroll the primary focus target into view, so you don&#39;t need to worry about scrolling to the top of the page after a page navigation.</p>
+				<p>In a non-single page app website, a web browser will reset focus to the very top of the document after navigation (at the same time that is scrolls to top). You can emulate this with Oaf React Router by setting the primary focus target to <code>body</code> instead of the default <code>main h1</code>.</p>
+				<p>See:</p>
+				<ul>
+					<li><a href="https://reacttraining.com/react-router/web/guides/scroll-restoration">https://reacttraining.com/react-router/web/guides/scroll-restoration</a></li>
+					<li><a href="https://github.com/ReactTraining/react-router/issues/5210">https://github.com/ReactTraining/react-router/issues/5210</a></li>
+				</ul>
+				<h3 id="restore-scroll-and-focus-after-pop-navigation">Restore scroll and focus after POP navigation</h3>
+				<p>After a POP navigation (i.e. after navigation back or forward through history) browsers typically restore focus and scroll position to where they were when the user last navigated away from that page.</p>
+				<p><a href="https://reacttraining.com/react-router/web/guides/scroll-restoration/generic-solution">React Router does not emulate this</a>, so Oaf React Router takes care of it for you. Note that browsers such as Firefox and Safari will restore <em>both</em> scroll position and the last focused element, but for some reason Chrome restores <em>only</em> the scroll position, not the focused element. To imitate this, Oaf React Router will move focus to the <em>primary focus target</em> (as described in the previous section) instead of to the last focused element when a POP navigation occurs in Chrome.</p>
+				<p>Note that there is a <a href="https://majido.github.io/scroll-restoration-proposal/history-based-api.html">proposed scroll restoration standard</a> but it is not widely implemented and it only addresses scroll position, not focus (noticing a theme emerging?) so it is of no use to us.</p>
+				<p>See:</p>
+				<ul>
+					<li><a href="https://github.com/ReactTraining/react-router/issues/3950">https://github.com/ReactTraining/react-router/issues/3950</a></li>
+				</ul>
+				<h3 id="set-the-page-title-after-navigation">Set the page title after navigation</h3>
+				<p><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">Every page in your React app must have a unique and descriptive title</a>. Oaf React Router will set the page title for you using a function that maps from <code>location</code>s to page titles. You must supply this function.</p>
+				<p>See:</p>
+				<ul>
+					<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html</a></li>
+				</ul>
+				<h3 id="announce-navigation-to-users-of-screen-readers">Announce navigation to users of screen readers</h3>
+				<p>Oaf React Router will announce page navigation events to screen reader users via a <a href="https://a11yproject.com/posts/how-to-hide-content/">visually hidden</a> <code>aria-live</code> element. This is <a href="https://almerosteyn.com/2017/03/accessible-react-navigation">required because</a>:</p>
+				<blockquote><p>Screen readers are clever enough to read a lot of information that the browser expose naturally, but if no information exists to read out, the screen reader will remain ominously silent, even if something very important has happened on screen.</p>
+					<p>Unfortunately, this is the case with many routed SPA applications today. Screen readers are able to recognise actual browser navigation very easily as the browser will tell the screen reader that it has navigated to another web page. In the case of SPAs, like those built with React or Angular, the router software will take over some of the navigation actions from the browser in order to control the application without constantly reloading the host HTML page.</p>
+				<p>The result: A totally silent page transition leading to a very confusing experience for these users. Imagine trying to navigate a web application if you could not even see that the navigation was successful!</p></blockquote>
+				<p>By default, Oaf React Router will announce &quot;navigated to foo&quot; where &quot;foo&quot; is the page title returned by the function described in the previous section. You can override this to support localization, etc.</p>
+				<p>See:</p>
+				<ul>
+					<li><a href="https://almerosteyn.com/2017/03/accessible-react-navigation">https://almerosteyn.com/2017/03/accessible-react-navigation</a></li>
+				</ul>
+				<h3 id="hash-fragment-support">Hash fragment support</h3>
+				<p>Another native browser feature that React Router doesn&#39;t emulate is scrolling to the element identified by the hash fragment in a URL. For example, if you load <a href="https://en.wikipedia.org/wiki/Firefox#Performance">https://en.wikipedia.org/wiki/Firefox#Performance</a>, your browser will scroll down to the <code>&lt;span id=&quot;Performance&quot;&gt;</code> automatically.</p>
+				<p>There are other libraries that tackle this issue--for example <a href="https://github.com/rafrex/react-router-hash-link">rafrex/react-router-hash-link</a>--but they typically only address scroll to the exclusion of focus (there&#39;s that theme again).</p>
+				<p>Oaf React Router implements this for you, taking care of both focus and scroll.</p>
+				<p>A caveat here is that the identified element must exist in the DOM straight after the route is rendered. If the element won&#39;t exist for some time, e.g. until after an API response, then Oaf React Router won&#39;t focus or scroll to it, falling back on the primary focus target.</p>
+				<h2 id="installation">Installation</h2>
+				<pre><code class="language-sh"><span class="hljs-comment"># yarn</span>
+yarn add oaf-react-router
+
+<span class="hljs-comment"># npm</span>
+npm install oaf-react-router</code></pre>
+				<h2 id="basic-usage">Basic Usage</h2>
+				<pre><code class="language-diff"><span class="hljs-deletion">- import { BrowserRouter as Router } from "react-router-dom";</span>
+<span class="hljs-addition">+ import { Router } from "react-router-dom";</span>
+<span class="hljs-addition">+ import { createBrowserHistory } from "history";</span>
+<span class="hljs-addition">+ import { wrapHistory } from "oaf-react-router";</span>
+
+<span class="hljs-addition">+ const history = createBrowserHistory();</span>
+<span class="hljs-addition">+ wrapHistory(history);</span>
+
+ReactDOM.render((
+<span class="hljs-deletion">-  &lt;Router&gt;</span>
+<span class="hljs-addition">+  &lt;Router history={history}&gt;</span>
+    ...
+  &lt;/Router&gt;
+), document.getElementById("root"));</code></pre>
+				<h2 id="advanced-usage">Advanced Usage</h2>
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> history = createBrowserHistory();
+
+<span class="hljs-keyword">const</span> settings = {
+  <span class="hljs-attr">announcementsDivId</span>: <span class="hljs-string">"announcements"</span>,
+  <span class="hljs-attr">primaryFocusTarget</span>: <span class="hljs-string">"main h1, [role=main] h1"</span>,
+  <span class="hljs-attr">documentTitle</span>: <span class="hljs-function">(<span class="hljs-params">location: Location</span>) =&gt;</span> {
+    <span class="hljs-keyword">switch</span> (location.pathname) {
+      <span class="hljs-keyword">case</span> <span class="hljs-string">"/search"</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">"Search | My App"</span>
+      <span class="hljs-keyword">default</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">"My App"</span>
+    }
+  },
+  <span class="hljs-attr">navigationMessage</span>: (title: string, <span class="hljs-attr">location</span>: Location, <span class="hljs-attr">action</span>: Action): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
+  <span class="hljs-attr">shouldHandleAction</span>: <span class="hljs-function">(<span class="hljs-params">previousLocation: Location, nextLocation: Location, action: Action</span>) =&gt;</span> <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">disableAutoScrollRestoration</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">announcePageNavigation</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">setPageTitle</span>: <span class="hljs-literal">true</span>,
+};
+
+wrapHistory(history, settings);</code></pre>
+				<h3 id="a-note-on-setting-document-title">A note on setting document title</h3>
+				<p>You may already be using <a href="https://github.com/nfl/react-helmet">React Helmet</a> or some other technique to set the document title on route change. That&#39;s fine, just be mindful of how you might announce page navigation to users of screen readers and other assistive technology.</p>
+				<p>In the case of React Helmet, you would do something like this:</p>
+				<ol>
+					<li>Set both <code>setPageTitle</code> and <code>announcePageNavigation</code> to <code>false</code> in the config object you pass to Oaf React Router&#39;s <code>wrapHistory</code> function.</li>
+					<li>Add a handler function to <a href="https://github.com/nfl/react-helmet#reference-guide">React Helmet&#39;s <code>onChangeClientState</code> callback</a>.</li>
+					<li>Announce page navigation using something like <a href="https://danielnixon.github.io/oaf-side-effects/modules/_index_.html#announce">the <code>announce</code> function from Oaf Side Effects</a> (which is what Oaf React Router itself uses).</li>
+				</ol>
+				<h2 id="inspiration-and-prior-art">Inspiration and prior art</h2>
+				<ul>
+					<li><a href="https://github.com/rafrex/react-router-hash-link">https://github.com/rafrex/react-router-hash-link</a></li>
+					<li><a href="https://github.com/trevorr/react-scroll-manager">https://github.com/trevorr/react-scroll-manager</a></li>
+					<li><a href="https://medium.com/@gajus/making-the-anchor-links-work-in-spa-applications-618ba2c6954a">https://medium.com/@gajus/making-the-anchor-links-work-in-spa-applications-618ba2c6954a</a></li>
+					<li><a href="https://almerosteyn.com/2017/03/accessible-react-navigation">https://almerosteyn.com/2017/03/accessible-react-navigation</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_is_.html">"is"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_page_state_.html">"page-<wbr>state"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_wrap_history_.html">"wrap-<wbr>history"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
