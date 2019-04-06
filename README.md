@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/danielnixon/oaf-react-router.svg?branch=master)](https://travis-ci.org/danielnixon/oaf-react-router)
 [![Known Vulnerabilities](https://snyk.io/test/github/danielnixon/oaf-react-router/badge.svg?targetFile=package.json)](https://snyk.io/test/github/danielnixon/oaf-react-router?targetFile=package.json)
 [![Greenkeeper badge](https://badges.greenkeeper.io/danielnixon/oaf-react-router.svg)](https://greenkeeper.io/)
-![npm](https://img.shields.io/npm/v/oaf-react-router.svg)
+[![npm](https://img.shields.io/npm/v/oaf-react-router.svg)](https://www.npmjs.com/package/oaf-react-router)
 
 # Oaf React Router
 
