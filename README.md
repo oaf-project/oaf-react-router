@@ -29,7 +29,7 @@ Oaf React Router fixes this by moving focus to something it calls the "primary f
 
 In addition to moving focus, Oaf React Router will also scroll the primary focus target into view, so you don't need to worry about scrolling to the top of the page after a page navigation.
 
-In a non-single page app website, a web browser will reset focus to the very top of the document after navigation (at the same time that is scrolls to top). You can emulate this with Oaf React Router by setting the primary focus target to `body` instead of the default `main h1`.
+In a non-single page app website, a web browser will reset focus to the very top of the document after navigation (at the same time that it scrolls to top). You can emulate this with Oaf React Router by setting the primary focus target to `body` instead of the default `main h1`.
 
 See:
 * https://reacttraining.com/react-router/web/guides/scroll-restoration
@@ -41,7 +41,7 @@ After a POP navigation (i.e. after navigation back or forward through history) b
 
 [React Router does not emulate this](https://reacttraining.com/react-router/web/guides/scroll-restoration/generic-solution), so Oaf React Router takes care of it for you. Note that browsers such as Firefox and Safari will restore _both_ scroll position and the last focused element, but for some reason Chrome restores _only_ the scroll position, not the focused element. To imitate this, Oaf React Router will move focus to the _primary focus target_ (as described in the previous section) instead of to the last focused element when a POP navigation occurs in Chrome.
 
-Note that there is a [proposed scroll restoration standard](https://majido.github.io/scroll-restoration-proposal/history-based-api.html) but it is not widely implemented and it only addresses scroll position, not focus (noticing a theme emerging?) so it is of no use to us.
+Note that there is a [proposed scroll restoration standard](https://majido.github.io/scroll-restoration-proposal/history-based-api.html) but it is not widely implemented and it only addresses scroll position, not focus (notice a theme emerging?) so it is of no use to us.
 
 See:
 * https://github.com/ReactTraining/react-router/issues/3950
