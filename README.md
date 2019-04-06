@@ -55,7 +55,7 @@ See:
 
 ### Announce navigation to users of screen readers
 
-Oaf React Router will announce page navigation events to screen reader users via a [visually hidden](https://a11yproject.com/posts/how-to-hide-content/) `aria-live` element. This is [required because](https://almerosteyn.com/2017/03/accessible-react-navigation):
+Oaf React Router will announce page navigation events to screen reader users via a [visually hidden](https://a11yproject.com/posts/how-to-hide-content/) `aria-live` element. [Announcing navigation is required](https://almerosteyn.com/2017/03/accessible-react-navigation) because:
 
 <blockquote><p>Screen readers are clever enough to read a lot of information that the browser expose naturally, but if no information exists to read out, the screen reader will remain ominously silent, even if something very important has happened on screen.</p>
 
