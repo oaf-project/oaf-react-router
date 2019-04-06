@@ -109,7 +109,7 @@ ReactDOM.render((
 
 ## Advanced Usage
 
-```javascript
+```typescript
 const history = createBrowserHistory();
 
 const settings = {
