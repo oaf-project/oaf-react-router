@@ -48,7 +48,7 @@ See:
 
 ### Set the page title after navigation
 
-[Every page in your React app must have a unique and descriptive title](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html). Oaf React Router will set the page title for you using a function that maps from `location`s to page titles. You must supply this function.
+[Every page in your React app must have a unique and descriptive title](https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html). Oaf React Router will set the page title for you using a function that maps from `location`s to page titles. You must supply this function. For how to provide this function, see the usage section below.
 
 See:
 * https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html
