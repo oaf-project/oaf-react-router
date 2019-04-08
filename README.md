@@ -7,8 +7,7 @@
 
 An accessible wrapper for [React Router](https://reacttraining.com/react-router/).
 
-Documentation at https://danielnixon.github.io/oaf-react-router/
-
+Documentation at https://oaf-project.github.io/oaf-react-router/
 ## Features
 
 * Reset scroll and focus after PUSH and REPLACE navigation
