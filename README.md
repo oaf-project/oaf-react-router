@@ -58,7 +58,7 @@ See:
 
 ### Announce navigation to users of screen readers
 
-Oaf React Router will announce page navigation events to screen reader users via a [visually hidden](https://a11yproject.com/posts/how-to-hide-content/) `aria-live` element. [Announcing navigation is required](https://almerosteyn.com/2017/03/accessible-react-navigation) because:
+Oaf React Router will announce page navigation events to screen reader users via a [visually hidden](https://a11yproject.com/posts/how-to-hide-content/) [`aria-live`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) element. [Announcing navigation is required](https://almerosteyn.com/2017/03/accessible-react-navigation) because:
 
 <blockquote><p>Screen readers are clever enough to read a lot of information that the browser expose naturally, but if no information exists to read out, the screen reader will remain ominously silent, even if something very important has happened on screen.</p>
 
@@ -75,7 +75,7 @@ See:
 
 Another native browser feature that React Router doesn't emulate is scrolling to the element identified by the hash fragment in a URL. For example, if you load https://en.wikipedia.org/wiki/Firefox#Performance, your browser will scroll down to the `<span id="Performance">` automatically.
 
-There are other libraries that tackle this issue--for example [rafrex/react-router-hash-link](https://github.com/rafrex/react-router-hash-link)--but they typically only address scroll to the exclusion of focus (there's that theme again).
+There are other libraries that tackle this issue—for example [rafrex/react-router-hash-link](https://github.com/rafrex/react-router-hash-link)—but they typically only address scroll to the exclusion of focus (there's that theme again).
 
 Oaf React Router implements this for you, taking care of both focus and scroll.
 
