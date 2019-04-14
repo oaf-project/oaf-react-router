@@ -62,13 +62,16 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<p><a href="https://travis-ci.org/danielnixon/oaf-react-router"><img src="https://travis-ci.org/danielnixon/oaf-react-router.svg?branch=master" alt="Build Status"></a>
-					<a href="https://snyk.io/test/github/danielnixon/oaf-react-router?targetFile=package.json"><img src="https://snyk.io/test/github/danielnixon/oaf-react-router/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
-					<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/danielnixon/oaf-react-router.svg" alt="Greenkeeper badge"></a>
-				<img src="https://img.shields.io/npm/v/oaf-react-router.svg" alt="npm"></p>
+				<p><a href="https://travis-ci.org/oaf-project/oaf-react-router"><img src="https://travis-ci.org/oaf-project/oaf-react-router.svg?branch=master" alt="Build Status"></a>
+					<a href="https://snyk.io/test/github/oaf-project/oaf-react-router?targetFile=package.json"><img src="https://snyk.io/test/github/oaf-project/oaf-react-router/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
+					<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/oaf-project/oaf-react-router.svg" alt="Greenkeeper badge"></a>
+				<a href="https://www.npmjs.com/package/oaf-react-router"><img src="https://img.shields.io/npm/v/oaf-react-router.svg" alt="npm"></a></p>
+				<p><a href="https://david-dm.org/oaf-project/oaf-react-router"><img src="https://david-dm.org/oaf-project/oaf-react-router/status.svg" alt="dependencies Status"></a>
+					<a href="https://david-dm.org/oaf-project/oaf-react-router?type=dev"><img src="https://david-dm.org/oaf-project/oaf-react-router/dev-status.svg" alt="devDependencies Status"></a>
+				<a href="https://david-dm.org/oaf-project/oaf-react-router?type=peer"><img src="https://david-dm.org/oaf-project/oaf-react-router/peer-status.svg" alt="peerDependencies Status"></a></p>
 				<h1 id="oaf-react-router">Oaf React Router</h1>
 				<p>An accessible wrapper for <a href="https://reacttraining.com/react-router/">React Router</a>.</p>
-				<p>Documentation at <a href="https://danielnixon.github.io/oaf-react-router/">https://danielnixon.github.io/oaf-react-router/</a></p>
+				<p>Documentation at <a href="https://oaf-project.github.io/oaf-react-router/">https://oaf-project.github.io/oaf-react-router/</a></p>
 				<h2 id="features">Features</h2>
 				<ul>
 					<li>Reset scroll and focus after PUSH and REPLACE navigation</li>
@@ -85,7 +88,7 @@
 				</blockquote>
 				<p>Oaf React Router fixes this by moving focus to something it calls the &quot;primary focus target&quot; after navigation, which by default is the first <code>h1</code> element inside the page&#39;s <code>main</code> element, but this is configurable.</p>
 				<p>In addition to moving focus, Oaf React Router will also scroll the primary focus target into view, so you don&#39;t need to worry about scrolling to the top of the page after a page navigation.</p>
-				<p>In a non-single page app website, a web browser will reset focus to the very top of the document after navigation (at the same time that is scrolls to top). You can emulate this with Oaf React Router by setting the primary focus target to <code>body</code> instead of the default <code>main h1</code>.</p>
+				<p>In a non-single page app website, a web browser will reset focus to the very top of the document after navigation (at the same time that it scrolls to top). You can emulate this with Oaf React Router by setting the primary focus target to <code>body</code> instead of the default <code>main h1</code>.</p>
 				<p>See:</p>
 				<ul>
 					<li><a href="https://reacttraining.com/react-router/web/guides/scroll-restoration">https://reacttraining.com/react-router/web/guides/scroll-restoration</a></li>
@@ -94,19 +97,19 @@
 				<h3 id="restore-scroll-and-focus-after-pop-navigation">Restore scroll and focus after POP navigation</h3>
 				<p>After a POP navigation (i.e. after navigation back or forward through history) browsers typically restore focus and scroll position to where they were when the user last navigated away from that page.</p>
 				<p><a href="https://reacttraining.com/react-router/web/guides/scroll-restoration/generic-solution">React Router does not emulate this</a>, so Oaf React Router takes care of it for you. Note that browsers such as Firefox and Safari will restore <em>both</em> scroll position and the last focused element, but for some reason Chrome restores <em>only</em> the scroll position, not the focused element. To imitate this, Oaf React Router will move focus to the <em>primary focus target</em> (as described in the previous section) instead of to the last focused element when a POP navigation occurs in Chrome.</p>
-				<p>Note that there is a <a href="https://majido.github.io/scroll-restoration-proposal/history-based-api.html">proposed scroll restoration standard</a> but it is not widely implemented and it only addresses scroll position, not focus (noticing a theme emerging?) so it is of no use to us.</p>
+				<p>Note that there is a <a href="https://majido.github.io/scroll-restoration-proposal/history-based-api.html">proposed scroll restoration standard</a> but it is not widely implemented and it only addresses scroll position, not focus (notice a theme emerging?) so it is of no use to us.</p>
 				<p>See:</p>
 				<ul>
 					<li><a href="https://github.com/ReactTraining/react-router/issues/3950">https://github.com/ReactTraining/react-router/issues/3950</a></li>
 				</ul>
 				<h3 id="set-the-page-title-after-navigation">Set the page title after navigation</h3>
-				<p><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">Every page in your React app must have a unique and descriptive title</a>. Oaf React Router will set the page title for you using a function that maps from <code>location</code>s to page titles. You must supply this function.</p>
+				<p><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">Every page in your React app must have a unique and descriptive title</a>. Oaf React Router will set the page title for you using a function that maps from <code>location</code>s to page titles. You must supply this function. For how to provide this function, see the usage section below.</p>
 				<p>See:</p>
 				<ul>
 					<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html</a></li>
 				</ul>
 				<h3 id="announce-navigation-to-users-of-screen-readers">Announce navigation to users of screen readers</h3>
-				<p>Oaf React Router will announce page navigation events to screen reader users via a <a href="https://a11yproject.com/posts/how-to-hide-content/">visually hidden</a> <code>aria-live</code> element. This is <a href="https://almerosteyn.com/2017/03/accessible-react-navigation">required because</a>:</p>
+				<p>Oaf React Router will announce page navigation events to screen reader users via a <a href="https://a11yproject.com/posts/how-to-hide-content/">visually hidden</a> <code>aria-live</code> element. <a href="https://almerosteyn.com/2017/03/accessible-react-navigation">Announcing navigation is required</a> because:</p>
 				<blockquote><p>Screen readers are clever enough to read a lot of information that the browser expose naturally, but if no information exists to read out, the screen reader will remain ominously silent, even if something very important has happened on screen.</p>
 					<p>Unfortunately, this is the case with many routed SPA applications today. Screen readers are able to recognise actual browser navigation very easily as the browser will tell the screen reader that it has navigated to another web page. In the case of SPAs, like those built with React or Angular, the router software will take over some of the navigation actions from the browser in order to control the application without constantly reloading the host HTML page.</p>
 				<p>The result: A totally silent page transition leading to a very confusing experience for these users. Imagine trying to navigate a web application if you could not even see that the navigation was successful!</p></blockquote>
@@ -142,22 +145,22 @@ ReactDOM.render((
   &lt;/Router&gt;
 ), document.getElementById("root"));</code></pre>
 				<h2 id="advanced-usage">Advanced Usage</h2>
-				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> history = createBrowserHistory();
+				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> history = createBrowserHistory();
 
 <span class="hljs-keyword">const</span> settings = {
-  <span class="hljs-attr">announcementsDivId</span>: <span class="hljs-string">"announcements"</span>,
-  <span class="hljs-attr">primaryFocusTarget</span>: <span class="hljs-string">"main h1, [role=main] h1"</span>,
-  <span class="hljs-attr">documentTitle</span>: <span class="hljs-function">(<span class="hljs-params">location: Location</span>) =&gt;</span> {
+  announcementsDivId: <span class="hljs-string">"announcements"</span>,
+  primaryFocusTarget: <span class="hljs-string">"main h1, [role=main] h1"</span>,
+  documentTitle: <span class="hljs-function">(<span class="hljs-params">location: Location</span>) =&gt;</span> {
     <span class="hljs-keyword">switch</span> (location.pathname) {
       <span class="hljs-keyword">case</span> <span class="hljs-string">"/search"</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">"Search | My App"</span>
       <span class="hljs-keyword">default</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">"My App"</span>
     }
   },
-  <span class="hljs-attr">navigationMessage</span>: (title: string, <span class="hljs-attr">location</span>: Location, <span class="hljs-attr">action</span>: Action): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
-  <span class="hljs-attr">shouldHandleAction</span>: <span class="hljs-function">(<span class="hljs-params">previousLocation: Location, nextLocation: Location, action: Action</span>) =&gt;</span> <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">disableAutoScrollRestoration</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">announcePageNavigation</span>: <span class="hljs-literal">true</span>,
-  <span class="hljs-attr">setPageTitle</span>: <span class="hljs-literal">true</span>,
+  navigationMessage: (title: <span class="hljs-built_in">string</span>, location: Location, action: Action): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
+  shouldHandleAction: <span class="hljs-function">(<span class="hljs-params">previousLocation: Location, nextLocation: Location, action: Action</span>) =&gt;</span> <span class="hljs-literal">true</span>,
+  disableAutoScrollRestoration: <span class="hljs-literal">true</span>,
+  announcePageNavigation: <span class="hljs-literal">true</span>,
+  setPageTitle: <span class="hljs-literal">true</span>,
 };
 
 wrapHistory(history, settings);</code></pre>
@@ -175,6 +178,7 @@ wrapHistory(history, settings);</code></pre>
 					<li><a href="https://github.com/trevorr/react-scroll-manager">https://github.com/trevorr/react-scroll-manager</a></li>
 					<li><a href="https://medium.com/@gajus/making-the-anchor-links-work-in-spa-applications-618ba2c6954a">https://medium.com/@gajus/making-the-anchor-links-work-in-spa-applications-618ba2c6954a</a></li>
 					<li><a href="https://almerosteyn.com/2017/03/accessible-react-navigation">https://almerosteyn.com/2017/03/accessible-react-navigation</a></li>
+					<li><a href="https://reach.tech/router/accessibility">https://reach.tech/router/accessibility</a></li>
 				</ul>
 			</div>
 		</div>
