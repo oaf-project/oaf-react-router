@@ -5,7 +5,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/danielnixon/oaf-react-router.git"
+    "url": "https://github.com/oaf-project/oaf-react-router.git"
   },
   "devDependencies": {
     "@types/history": "^4.7.2",
