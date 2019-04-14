@@ -141,7 +141,7 @@ You may already be using [React Helmet](https://github.com/nfl/react-helmet) or 
 In the case of React Helmet, you would do something like this:
 1. Set both `setPageTitle` and `announcePageNavigation` to `false` in the config object you pass to Oaf React Router's `wrapHistory` function.
 2. Add a handler function to [React Helmet's `onChangeClientState` callback](https://github.com/nfl/react-helmet#reference-guide).
-3. Announce page navigation using something like [the `announce` function from Oaf Side Effects](https://danielnixon.github.io/oaf-side-effects/modules/_index_.html#announce) (which is what Oaf React Router itself uses).
+3. Announce page navigation using something like [the `announce` function from Oaf Side Effects](https://oaf-project.github.io/oaf-side-effects/modules/_index_.html#announce) (which is what Oaf React Router itself uses).
 
 ## Inspiration and prior art
 
