@@ -49,6 +49,8 @@ Note that there is a [proposed scroll restoration standard](https://majido.githu
 
 See:
 * https://github.com/ReactTraining/react-router/issues/3950
+* https://developer.mozilla.org/de/docs/Web/API/History#Browser_compatibility
+* https://github.com/Fyrd/caniuse/issues/1889
 
 ### Set the page title after navigation
 
