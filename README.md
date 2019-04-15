@@ -37,6 +37,7 @@ In a non-single page app website, a web browser will reset focus to the very top
 See:
 * https://reacttraining.com/react-router/web/guides/scroll-restoration
 * https://github.com/ReactTraining/react-router/issues/5210
+* https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf
 
 ### Restore scroll and focus after POP navigation
 
