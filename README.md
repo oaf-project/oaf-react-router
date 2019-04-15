@@ -150,3 +150,4 @@ In the case of React Helmet, you would do something like this:
 * https://medium.com/@gajus/making-the-anchor-links-work-in-spa-applications-618ba2c6954a
 * https://almerosteyn.com/2017/03/accessible-react-navigation
 * https://reach.tech/router/accessibility
+* https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf
