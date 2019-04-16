@@ -12,6 +12,15 @@
 An accessible wrapper for [React Router](https://reacttraining.com/react-router/).
 
 Documentation at https://oaf-project.github.io/oaf-react-router/
+
+## Compatibility
+
+* Supports React Router v4 & v5
+* DOM-only (no React Native support)
+* [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter)-only (not tested with HashRouter)
+* Tested in modern browsers, IE 11, Edge
+* IE 9 and 10 _might_ work, PRs welcome 🤷
+
 ## Features
 
 * Reset scroll and focus after PUSH and REPLACE navigation
