@@ -72,6 +72,14 @@
 				<h1 id="oaf-react-router">Oaf React Router</h1>
 				<p>An accessible wrapper for <a href="https://reacttraining.com/react-router/">React Router</a>.</p>
 				<p>Documentation at <a href="https://oaf-project.github.io/oaf-react-router/">https://oaf-project.github.io/oaf-react-router/</a></p>
+				<h2 id="compatibility">Compatibility</h2>
+				<ul>
+					<li>Supports React Router v4 &amp; v5</li>
+					<li>DOM-only (no React Native support)</li>
+					<li><a href="https://reacttraining.com/react-router/web/api/BrowserRouter"><code>BrowserRouter</code></a>-only (not tested with HashRouter)</li>
+					<li>Tested in modern browsers, IE 11, Edge</li>
+					<li>IE 9 and 10 <em>might</em> work, PRs welcome 🤷</li>
+				</ul>
 				<h2 id="features">Features</h2>
 				<ul>
 					<li>Reset scroll and focus after PUSH and REPLACE navigation</li>
@@ -82,7 +90,7 @@
 				</ul>
 				<h3 id="reset-scroll-and-focus-after-push-and-replace-navigation">Reset scroll and focus after PUSH and REPLACE navigation</h3>
 				<p><a href="https://reacttraining.com/react-router/web/guides/scroll-restoration">React Router does not reset the window&#39;s scroll position or the focused element</a> after page navigation.</p>
-				<p>The React Router documentation sketches a <a href="https://reacttraining.com/react-router/web/guides/scroll-restoration/scroll-to-top">&quot;scroll to top&quot; approach</a> that scrolls the window back to the top of the page after navigation, emulating native browser behavior. There are also packages to do this for you, such as <a href="https://github.com/trevorr/react-scroll-manager">trevorr/react-scroll-manager</a>. Unfortunately, these approaches address only the scroll half of the question, <a href="http://simplyaccessible.com/article/spangular-accessibility/#acc-heading-3">ignoring keyboard focus</a>:</p>
+				<p>The React Router documentation sketches a <a href="https://reacttraining.com/react-router/web/guides/scroll-restoration/scroll-to-top">&quot;scroll to top&quot; approach</a> that scrolls the window back to the top of the page after navigation, emulating native browser behavior. There are also packages to do this for you, such as <a href="https://github.com/trevorr/react-scroll-manager">trevorr/react-scroll-manager</a> or <a href="https://github.com/bluframe/react-router-scroll-top/issues/10">react-router-scroll-top</a>. Unfortunately, these approaches address only the scroll half of the question, <a href="http://simplyaccessible.com/article/spangular-accessibility/#acc-heading-3">ignoring keyboard focus</a>:</p>
 				<blockquote>
 					<p>One of the unique features of single page applications that can create challenges for people using screen readers is that there’s never a page refresh, only view refreshes. As a result, the focused element often disappears from the interface, and the person using the screen reader is left searching for clues as to what happened and what’s now showing in the application view. Places where focus is commonly lost include: page changes, item deleting, modal closing, and expanding and closing record details.</p>
 				</blockquote>
@@ -93,6 +101,7 @@
 				<ul>
 					<li><a href="https://reacttraining.com/react-router/web/guides/scroll-restoration">https://reacttraining.com/react-router/web/guides/scroll-restoration</a></li>
 					<li><a href="https://github.com/ReactTraining/react-router/issues/5210">https://github.com/ReactTraining/react-router/issues/5210</a></li>
+					<li><a href="https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf">https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf</a></li>
 				</ul>
 				<h3 id="restore-scroll-and-focus-after-pop-navigation">Restore scroll and focus after POP navigation</h3>
 				<p>After a POP navigation (i.e. after navigation back or forward through history) browsers typically restore focus and scroll position to where they were when the user last navigated away from that page.</p>
@@ -101,6 +110,8 @@
 				<p>See:</p>
 				<ul>
 					<li><a href="https://github.com/ReactTraining/react-router/issues/3950">https://github.com/ReactTraining/react-router/issues/3950</a></li>
+					<li><a href="https://developer.mozilla.org/de/docs/Web/API/History#Browser_compatibility">https://developer.mozilla.org/de/docs/Web/API/History#Browser_compatibility</a></li>
+					<li><a href="https://github.com/Fyrd/caniuse/issues/1889">https://github.com/Fyrd/caniuse/issues/1889</a></li>
 				</ul>
 				<h3 id="set-the-page-title-after-navigation">Set the page title after navigation</h3>
 				<p><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">Every page in your React app must have a unique and descriptive title</a>. Oaf React Router will set the page title for you using a function that maps from <code>location</code>s to page titles. You must supply this function. For how to provide this function, see the usage section below.</p>
@@ -109,7 +120,7 @@
 					<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html</a></li>
 				</ul>
 				<h3 id="announce-navigation-to-users-of-screen-readers">Announce navigation to users of screen readers</h3>
-				<p>Oaf React Router will announce page navigation events to screen reader users via a <a href="https://a11yproject.com/posts/how-to-hide-content/">visually hidden</a> <code>aria-live</code> element. <a href="https://almerosteyn.com/2017/03/accessible-react-navigation">Announcing navigation is required</a> because:</p>
+				<p>Oaf React Router will announce page navigation events to screen reader users via a <a href="https://a11yproject.com/posts/how-to-hide-content/">visually hidden</a> <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions"><code>aria-live</code></a> element. <a href="https://almerosteyn.com/2017/03/accessible-react-navigation">Announcing navigation is required</a> because:</p>
 				<blockquote><p>Screen readers are clever enough to read a lot of information that the browser expose naturally, but if no information exists to read out, the screen reader will remain ominously silent, even if something very important has happened on screen.</p>
 					<p>Unfortunately, this is the case with many routed SPA applications today. Screen readers are able to recognise actual browser navigation very easily as the browser will tell the screen reader that it has navigated to another web page. In the case of SPAs, like those built with React or Angular, the router software will take over some of the navigation actions from the browser in order to control the application without constantly reloading the host HTML page.</p>
 				<p>The result: A totally silent page transition leading to a very confusing experience for these users. Imagine trying to navigate a web application if you could not even see that the navigation was successful!</p></blockquote>
@@ -120,7 +131,7 @@
 				</ul>
 				<h3 id="hash-fragment-support">Hash fragment support</h3>
 				<p>Another native browser feature that React Router doesn&#39;t emulate is scrolling to the element identified by the hash fragment in a URL. For example, if you load <a href="https://en.wikipedia.org/wiki/Firefox#Performance">https://en.wikipedia.org/wiki/Firefox#Performance</a>, your browser will scroll down to the <code>&lt;span id=&quot;Performance&quot;&gt;</code> automatically.</p>
-				<p>There are other libraries that tackle this issue--for example <a href="https://github.com/rafrex/react-router-hash-link">rafrex/react-router-hash-link</a>--but they typically only address scroll to the exclusion of focus (there&#39;s that theme again).</p>
+				<p>There are other libraries that tackle this issue—for example <a href="https://github.com/rafrex/react-router-hash-link">rafrex/react-router-hash-link</a>—but they typically only address scroll to the exclusion of focus (there&#39;s that theme again).</p>
 				<p>Oaf React Router implements this for you, taking care of both focus and scroll.</p>
 				<p>A caveat here is that the identified element must exist in the DOM straight after the route is rendered. If the element won&#39;t exist for some time, e.g. until after an API response, then Oaf React Router won&#39;t focus or scroll to it, falling back on the primary focus target.</p>
 				<h2 id="installation">Installation</h2>
@@ -170,7 +181,7 @@ wrapHistory(history, settings);</code></pre>
 				<ol>
 					<li>Set both <code>setPageTitle</code> and <code>announcePageNavigation</code> to <code>false</code> in the config object you pass to Oaf React Router&#39;s <code>wrapHistory</code> function.</li>
 					<li>Add a handler function to <a href="https://github.com/nfl/react-helmet#reference-guide">React Helmet&#39;s <code>onChangeClientState</code> callback</a>.</li>
-					<li>Announce page navigation using something like <a href="https://danielnixon.github.io/oaf-side-effects/modules/_index_.html#announce">the <code>announce</code> function from Oaf Side Effects</a> (which is what Oaf React Router itself uses).</li>
+					<li>Announce page navigation using something like <a href="https://oaf-project.github.io/oaf-side-effects/modules/_index_.html#announce">the <code>announce</code> function from Oaf Side Effects</a> (which is what Oaf React Router itself uses).</li>
 				</ol>
 				<h2 id="inspiration-and-prior-art">Inspiration and prior art</h2>
 				<ul>
@@ -179,6 +190,7 @@ wrapHistory(history, settings);</code></pre>
 					<li><a href="https://medium.com/@gajus/making-the-anchor-links-work-in-spa-applications-618ba2c6954a">https://medium.com/@gajus/making-the-anchor-links-work-in-spa-applications-618ba2c6954a</a></li>
 					<li><a href="https://almerosteyn.com/2017/03/accessible-react-navigation">https://almerosteyn.com/2017/03/accessible-react-navigation</a></li>
 					<li><a href="https://reach.tech/router/accessibility">https://reach.tech/router/accessibility</a></li>
+					<li><a href="https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf">https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf</a></li>
 				</ul>
 			</div>
 		</div>
