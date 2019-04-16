@@ -20,7 +20,7 @@
     "typescript": "^3.4.3"
   },
   "dependencies": {
-    "oaf-side-effects": "^0.6.0",
+    "oaf-side-effects": "^0.7.0",
     "unique-selector": "^0.4.1"
   },
   "peerDependencies": {
