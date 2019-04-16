@@ -42,6 +42,8 @@ export interface RouterSettings {
   readonly setPageTitle: boolean;
   readonly renderTimeout: number;
   readonly defaultPageState: PageState;
+  readonly focusOptions?: FocusOptions;
+  readonly scrollIntoViewOptions?: ScrollIntoViewOptions;
 }
 
 export const defaultSettings: RouterSettings = {
@@ -56,6 +58,8 @@ export const defaultSettings: RouterSettings = {
   setPageTitle: true,
   renderTimeout: 0,
   defaultPageState: { x: 0, y: 0 },
+  focusOptions: undefined,
+  scrollIntoViewOptions: undefined,
 };
 
 const disableAutoScrollRestoration = (
@@ -86,7 +90,12 @@ const handleFirstPageLoad = <A = LocationState>(
   setTimeout(() => {
     const focusTarget = elementFromHash(h.location.hash);
     if (focusTarget !== undefined) {
-      focusAndScrollIntoViewIfRequired(focusTarget, focusTarget);
+      focusAndScrollIntoViewIfRequired(
+        focusTarget,
+        focusTarget,
+        settings.focusOptions,
+        settings.scrollIntoViewOptions,
+      );
     }
   }, settings.renderTimeout);
 };
@@ -158,6 +167,8 @@ export const wrapHistory = <A = LocationState>(
           resetFocus(
             settings.primaryFocusTarget,
             elementFromHash(location.hash),
+            settings.focusOptions,
+            settings.scrollIntoViewOptions,
           );
         }, settings.renderTimeout);
       }
