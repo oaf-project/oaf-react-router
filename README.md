@@ -130,17 +130,15 @@ const history = createBrowserHistory();
 const settings = {
   announcementsDivId: "announcements",
   primaryFocusTarget: "main h1, [role=main] h1",
-  documentTitle: (location: Location) => {
-    switch (location.pathname) {
-      case "/search": return "Search | My App"
-      default: return "My App"
-    }
-  },
+  // This assumes you're setting the document title via some other means (e.g. React Helmet).
+  // If you're not, you should return a unique and descriptive page title for each page
+  // from this function and set `setPageTitle` to true.
+  documentTitle: (location: Location) => new Promise(resolve => setTimeout(() => resolve(document.title))),
   navigationMessage: (title: string, location: Location, action: Action): string => `Navigated to ${title}.`,
   shouldHandleAction: (previousLocation: Location, nextLocation: Location, action: Action) => true,
   disableAutoScrollRestoration: true,
   announcePageNavigation: true,
-  setPageTitle: true,
+  setPageTitle: false,
 };
 
 wrapHistory(history, settings);
@@ -150,7 +148,7 @@ wrapHistory(history, settings);
 
 You may already be using [React Helmet](https://github.com/nfl/react-helmet) or some other technique to set the document title on route change. That's fine, just be mindful of how you might announce page navigation to users of screen readers and other assistive technology.
 
-In the case of React Helmet, you would do something like this:
+In the case of React Helmet, you might do something like this:
 1. Set both `setPageTitle` and `announcePageNavigation` to `false` in the config object you pass to Oaf React Router's `wrapHistory` function.
 2. Add a handler function to [React Helmet's `onChangeClientState` callback](https://github.com/nfl/react-helmet#reference-guide).
 3. Announce page navigation using something like [the `announce` function from Oaf Side Effects](https://oaf-project.github.io/oaf-side-effects/modules/_index_.html#announce) (which is what Oaf React Router itself uses).

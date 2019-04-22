@@ -161,23 +161,21 @@ ReactDOM.render((
 <span class="hljs-keyword">const</span> settings = {
   announcementsDivId: <span class="hljs-string">"announcements"</span>,
   primaryFocusTarget: <span class="hljs-string">"main h1, [role=main] h1"</span>,
-  documentTitle: <span class="hljs-function">(<span class="hljs-params">location: Location</span>) =&gt;</span> {
-    <span class="hljs-keyword">switch</span> (location.pathname) {
-      <span class="hljs-keyword">case</span> <span class="hljs-string">"/search"</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">"Search | My App"</span>
-      <span class="hljs-keyword">default</span>: <span class="hljs-keyword">return</span> <span class="hljs-string">"My App"</span>
-    }
-  },
+  <span class="hljs-comment">// This assumes you're setting the document title via some other means (e.g. React Helmet).</span>
+  <span class="hljs-comment">// If you're not, you should return a unique and descriptive page title for each page</span>
+  <span class="hljs-comment">// from this function and set `setPageTitle` to true.</span>
+  documentTitle: <span class="hljs-function">(<span class="hljs-params">location: Location</span>) =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> resolve(<span class="hljs-built_in">document</span>.title))),
   navigationMessage: (title: <span class="hljs-built_in">string</span>, location: Location, action: Action): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
   shouldHandleAction: <span class="hljs-function">(<span class="hljs-params">previousLocation: Location, nextLocation: Location, action: Action</span>) =&gt;</span> <span class="hljs-literal">true</span>,
   disableAutoScrollRestoration: <span class="hljs-literal">true</span>,
   announcePageNavigation: <span class="hljs-literal">true</span>,
-  setPageTitle: <span class="hljs-literal">true</span>,
+  setPageTitle: <span class="hljs-literal">false</span>,
 };
 
 wrapHistory(history, settings);</code></pre>
 				<h3 id="a-note-on-setting-document-title">A note on setting document title</h3>
 				<p>You may already be using <a href="https://github.com/nfl/react-helmet">React Helmet</a> or some other technique to set the document title on route change. That&#39;s fine, just be mindful of how you might announce page navigation to users of screen readers and other assistive technology.</p>
-				<p>In the case of React Helmet, you would do something like this:</p>
+				<p>In the case of React Helmet, you might do something like this:</p>
 				<ol>
 					<li>Set both <code>setPageTitle</code> and <code>announcePageNavigation</code> to <code>false</code> in the config object you pass to Oaf React Router&#39;s <code>wrapHistory</code> function.</li>
 					<li>Add a handler function to <a href="https://github.com/nfl/react-helmet#reference-guide">React Helmet&#39;s <code>onChangeClientState</code> callback</a>.</li>
@@ -202,15 +200,6 @@ wrapHistory(history, settings);</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_index_.html">"index"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_is_.html">"is"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_page_state_.html">"page-<wbr>state"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_wrap_history_.html">"wrap-<wbr>history"</a>
 					</li>
 				</ul>
 			</nav>
