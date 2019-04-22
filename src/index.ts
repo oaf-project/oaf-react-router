@@ -30,6 +30,8 @@ import {
 // tslint:disable: object-literal-sort-keys
 // tslint:disable: no-object-mutation
 
+export { defaultSettings, RouterSettings } from "oaf-routing";
+
 const handleFirstPageLoad = async <A = LocationState>(
   history: History<A>,
   settings: RouterSettings<Location<A>, Action>,
