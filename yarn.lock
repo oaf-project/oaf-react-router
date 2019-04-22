@@ -555,6 +555,14 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
+oaf-routing@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-0.2.0.tgz#9e294253afdc38ffe562a666828dda9168660f1c"
+  integrity sha512-6ZUrIkJEcoY9wialStWVY7mynyCPrSiW3IrDE5VqLxRUJQe88U5tbJw43JfQYQtyOkakS8GJtqecVChdhVa65w==
+  dependencies:
+    oaf-side-effects "^0.7.0"
+    unique-selector "^0.4.1"
+
 oaf-side-effects@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/oaf-side-effects/-/oaf-side-effects-0.7.0.tgz#8eaac63cd259f743f93ae9bde3610819926d04f4"

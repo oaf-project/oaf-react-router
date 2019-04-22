@@ -20,6 +20,7 @@
     "typescript": "^3.4.4"
   },
   "dependencies": {
+    "oaf-routing": "^0.2.0",
     "oaf-side-effects": "^0.7.0",
     "unique-selector": "^0.4.1"
   },
@@ -29,7 +30,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "type-coverage": "type-coverage --at-least 99",
+    "type-coverage": "type-coverage --at-least 98",
     "format": "prettier --write '{src,test}/**/*.{ts,tsx}'",
     "format-lint": "prettylint '{src,test}/**/*.{ts,tsx}'",
     "documentation": "typedoc --excludeNotExported --excludePrivate --out docs src && cp docs_config.yml ./docs/_config.yml",
