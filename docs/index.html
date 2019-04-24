@@ -181,6 +181,20 @@ wrapHistory(history, settings);</code></pre>
 					<li>Add a handler function to <a href="https://github.com/nfl/react-helmet#reference-guide">React Helmet&#39;s <code>onChangeClientState</code> callback</a>.</li>
 					<li>Announce page navigation using something like <a href="https://oaf-project.github.io/oaf-side-effects/modules/_index_.html#announce">the <code>announce</code> function from Oaf Side Effects</a> (which is what Oaf React Router itself uses).</li>
 				</ol>
+				<h3 id="a-note-on-focus-outlines">A note on focus outlines</h3>
+				<p>You may see focus outlines around your <code>h1</code> elements (or elsewhere, per <code>primaryFocusTarget</code>) when using Oaf React Router.</p>
+				<p>You might be tempted to remove these focus outlines with something like the following:</p>
+				<pre><code class="language-css"><span class="hljs-selector-attr">[tabindex="-1"]</span><span class="hljs-selector-pseudo">:focus</span> {
+  <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
+}</code></pre>
+				<p>Don&#39;t do this! Focus outlines are important for accessibility. See for example:</p>
+				<ul>
+					<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html</a></li>
+					<li><a href="https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/F78">https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/F78</a></li>
+					<li><a href="http://www.outlinenone.com/">http://www.outlinenone.com/</a></li>
+				</ul>
+				<p>Note that <a href="https://github.com/twbs/bootstrap/issues/28425">Bootstrap 4 unfortunately removes these focus outlines</a>. If you use Bootstrap, you can restore them with <a href="https://github.com/oaf-project/oaf-bootstrap-4">Oaf Bootstrap 4</a>.</p>
+				<p>All that said, if you absolutely <em>must</em> remove focus outlines (stubborn client, stubborn boss, stubborn designer, whatever), consider using the <a href="https://github.com/WICG/focus-visible"><code>:focus-visible</code> polyfill</a> so focus outlines are only hidden from mouse users, <em>not</em> keyboard users.</p>
 				<h2 id="inspiration-and-prior-art">Inspiration and prior art</h2>
 				<ul>
 					<li><a href="https://github.com/rafrex/react-router-hash-link">https://github.com/rafrex/react-router-hash-link</a></li>
