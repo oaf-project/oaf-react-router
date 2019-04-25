@@ -181,3 +181,8 @@ All that said, if you absolutely _must_ remove focus outlines (stubborn client, 
 * https://almerosteyn.com/2017/03/accessible-react-navigation
 * https://reach.tech/router/accessibility
 * https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf
+
+
+## See also
+* [Oaf Routing](https://github.com/oaf-project/oaf-routing)
+* [Oaf Side Effects](https://github.com/oaf-project/oaf-side-effects)
