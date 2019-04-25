@@ -17,10 +17,10 @@
     "tslint-sonarts": "^1.9.0",
     "type-coverage": "^1.14.0",
     "typedoc": "^0.14.2",
-    "typescript": "^3.4.4"
+    "typescript": "^3.4.5"
   },
   "dependencies": {
-    "oaf-routing": "^0.2.0"
+    "oaf-routing": "^0.3.0"
   },
   "peerDependencies": {
     "history": "^4.9.0"

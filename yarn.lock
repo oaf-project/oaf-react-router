@@ -555,18 +555,18 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-oaf-routing@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-0.2.0.tgz#9e294253afdc38ffe562a666828dda9168660f1c"
-  integrity sha512-6ZUrIkJEcoY9wialStWVY7mynyCPrSiW3IrDE5VqLxRUJQe88U5tbJw43JfQYQtyOkakS8GJtqecVChdhVa65w==
+oaf-routing@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-0.3.0.tgz#256a917d622cb713a86f0bb1e01ca2343b0486df"
+  integrity sha512-lpxVREXOMfzwLXUVmysQi6cn/mxuHxBJvWf+4k1X+GByZnpRrJYk8JqbLRJ3feiFpYbojtTIPL6DiLa03hrl3w==
   dependencies:
-    oaf-side-effects "^0.7.0"
+    oaf-side-effects "^0.8.0"
     unique-selector "^0.4.1"
 
-oaf-side-effects@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/oaf-side-effects/-/oaf-side-effects-0.7.0.tgz#8eaac63cd259f743f93ae9bde3610819926d04f4"
-  integrity sha512-N/7g25wLbLW2mcJKU2f2iVfS3TChMfsq+GSg+nEtJtIF9+7G8+flyr8QiRpTHOOBuR8Akbx1Uj20T5XyPAGRZg==
+oaf-side-effects@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/oaf-side-effects/-/oaf-side-effects-0.8.0.tgz#89867808b6ce82a5e29eb799a52518cf73db3e1c"
+  integrity sha512-CN0zIb6AucMdY2OFJqwaHq6TM/K3EY+C77pMAuMN799oIqZBPFXqcA2ZKDIrvyOK4FumFg2fpMGjajv8BfFmbw==
 
 object-assign@^4.0.1:
   version "4.1.1"
@@ -718,9 +718,9 @@ resolve-pathname@^2.2.0:
   integrity sha512-bAFz9ld18RzJfddgrO2e/0S2O81710++chRMUxHjXOYKF6jTAMrUNZrEZ1PvV0zlhfjidm08iRPdTLPno1FuRg==
 
 resolve@^1.1.6, resolve@^1.10.0, resolve@^1.3.2:
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.10.0.tgz#3bdaaeaf45cc07f375656dfd2e54ed0810b101ba"
-  integrity sha512-3sUr9aq5OfSg2S9pNtPA9hL1FVEAjvfOC4leW0SNf/mpnaakz2a9femSd6LqAww2RaFctwyf1lCqnTHuF1rxDg==
+  version "1.10.1"
+  resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.10.1.tgz#664842ac960795bbe758221cdccda61fb64b5f18"
+  integrity sha512-KuIe4mf++td/eFb6wkaPbMDnP6kObCaEtIDuHOUED6MNUo4K670KZUHuuvYPZDxNF0WVLw49n06M2m2dXphEzA==
   dependencies:
     path-parse "^1.0.6"
 
@@ -926,10 +926,10 @@ typedoc@^0.14.2:
     typedoc-default-themes "^0.5.0"
     typescript "3.2.x"
 
-"typescript@2 || 3", typescript@^3.4.4:
-  version "3.4.4"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.4.tgz#aac4a08abecab8091a75f10842ffa0631818f785"
-  integrity sha512-xt5RsIRCEaf6+j9AyOBgvVuAec0i92rgCaS3S+UVf5Z/vF2Hvtsw08wtUTJqp4djwznoAgjSxeCcU4r+CcDBJA==
+"typescript@2 || 3", typescript@^3.4.5:
+  version "3.4.5"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.4.5.tgz#2d2618d10bb566572b8d7aad5180d84257d70a99"
+  integrity sha512-YycBxUb49UUhdNMU5aJ7z5Ej2XGmaIBL0x34vZ82fn3hGvD+bgrMrVDpatgz2f7YxUMJxMkbWxJZeAvDxVe7Vw==
 
 typescript@3.2.x:
   version "3.2.4"
@@ -937,9 +937,9 @@ typescript@3.2.x:
   integrity sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==
 
 uglify-js@^3.1.4:
-  version "3.5.6"
-  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.5.6.tgz#8a5f8a06ee7415ac1fa302f4623bc7344b553da4"
-  integrity sha512-YDKRX8F0Y+Jr7LhoVk0n4G7ltR3Y7qFAj+DtVBthlOgCcIj1hyMigCfousVfn9HKmvJ+qiFlLDwaHx44/e5ZKw==
+  version "3.5.7"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.5.7.tgz#1442fda9991a01aa0eb2853876640477109113ff"
+  integrity sha512-GCgJx3BBuaf/QMvBBkhoHDh4SVsHCC3ILEzriPw4FgJJKCuxVBSYLRkDlmT3uhXyGWKs3VN5r0mCkBIZaHWu3w==
   dependencies:
     commander "~2.20.0"
     source-map "~0.6.1"
