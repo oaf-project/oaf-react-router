@@ -165,6 +165,7 @@ ReactDOM.render((
   <span class="hljs-comment">// If you're not, you should return a unique and descriptive page title for each page</span>
   <span class="hljs-comment">// from this function and set `setPageTitle` to true.</span>
   documentTitle: <span class="hljs-function">(<span class="hljs-params">location: Location</span>) =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> resolve(<span class="hljs-built_in">document</span>.title))),
+  <span class="hljs-comment">// BYO localization</span>
   navigationMessage: (title: <span class="hljs-built_in">string</span>, location: Location, action: Action): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
   shouldHandleAction: <span class="hljs-function">(<span class="hljs-params">previousLocation: Location, nextLocation: Location, action: Action</span>) =&gt;</span> <span class="hljs-literal">true</span>,
   disableAutoScrollRestoration: <span class="hljs-literal">true</span>,
@@ -203,6 +204,11 @@ wrapHistory(history, settings);</code></pre>
 					<li><a href="https://almerosteyn.com/2017/03/accessible-react-navigation">https://almerosteyn.com/2017/03/accessible-react-navigation</a></li>
 					<li><a href="https://reach.tech/router/accessibility">https://reach.tech/router/accessibility</a></li>
 					<li><a href="https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf">https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf</a></li>
+				</ul>
+				<h2 id="see-also">See also</h2>
+				<ul>
+					<li><a href="https://github.com/oaf-project/oaf-routing">Oaf Routing</a></li>
+					<li><a href="https://github.com/oaf-project/oaf-side-effects">Oaf Side Effects</a></li>
 				</ul>
 			</div>
 		</div>
