@@ -24,10 +24,6 @@ import {
 
 // tslint:disable: no-expression-statement
 // tslint:disable: no-if-statement
-// tslint:disable: interface-over-type-literal
-// tslint:disable: interface-name
-// tslint:disable: no-mixed-interface
-// tslint:disable: object-literal-sort-keys
 // tslint:disable: no-object-mutation
 
 export { defaultSettings, RouterSettings } from "oaf-routing";

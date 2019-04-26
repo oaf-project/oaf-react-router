@@ -134,6 +134,7 @@ const settings = {
   // If you're not, you should return a unique and descriptive page title for each page
   // from this function and set `setPageTitle` to true.
   documentTitle: (location: Location) => new Promise(resolve => setTimeout(() => resolve(document.title))),
+  // BYO localization
   navigationMessage: (title: string, location: Location, action: Action): string => `Navigated to ${title}.`,
   shouldHandleAction: (previousLocation: Location, nextLocation: Location, action: Action) => true,
   disableAutoScrollRestoration: true,
