@@ -529,10 +529,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-oaf-routing@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-0.3.0.tgz#256a917d622cb713a86f0bb1e01ca2343b0486df"
-  integrity sha512-lpxVREXOMfzwLXUVmysQi6cn/mxuHxBJvWf+4k1X+GByZnpRrJYk8JqbLRJ3feiFpYbojtTIPL6DiLa03hrl3w==
+oaf-routing@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-0.4.1.tgz#b5302cafd44d1cfae06ac5f65de32ef79e366ce6"
+  integrity sha512-NfIBAqIvBPOBDER+cXJeCDkbJBuIYaEn0mwCgDOT3JNrikW53klZmZ/HYoPS3jgKh/N1Bx76PeZmBfklSASDZQ==
   dependencies:
     oaf-side-effects "^0.8.0"
     unique-selector "^0.4.1"
