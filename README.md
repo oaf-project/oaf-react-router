@@ -111,7 +111,7 @@ npm install oaf-react-router
 + import { createBrowserHistory } from "history";
 + import { wrapHistory } from "oaf-react-router";
 
-+ const history = createBrowserHistory();
++ const history = createBrowserHistory(); // or createHashHistory()
 + wrapHistory(history);
 
 ReactDOM.render((
