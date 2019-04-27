@@ -1,4 +1,4 @@
-import { History, Location, LocationState } from "history";
+import { History, Location } from "history";
 import {
   createOafRouter,
   defaultSettings as oafRoutingDefaultSettings,
@@ -9,25 +9,26 @@ import {
 
 export { RouterSettings } from "oaf-routing";
 
-export const defaultSettings = {
+export const defaultSettings: RouterSettings<Location<unknown>> = {
   ...oafRoutingDefaultSettings,
 };
 
-export const wrapHistory = <A = LocationState>(
+export const wrapHistory = <A = unknown>(
   history: History<A>,
   settingsOverrides?: Partial<RouterSettings<Location<A>>>,
 ): (() => void) => {
-  const settings = {
+  const settings: RouterSettings<Location<A>> = {
     ...defaultSettings,
     ...settingsOverrides,
   };
 
   const oafRouter = createOafRouter(settings, location => location.hash);
 
-  oafRouter.handleFirstPageLoad(history.location);
+  const initialRoute = history.location;
+  oafRouter.handleFirstPageLoad(initialRoute);
 
   // tslint:disable-next-line: no-let
-  let previousLocation = history.location;
+  let previousLocation = initialRoute;
 
   const unlisten = history.listen((location, action) => {
     oafRouter.handleLocationChanged(
