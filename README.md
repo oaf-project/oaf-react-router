@@ -17,7 +17,7 @@ Documentation at https://oaf-project.github.io/oaf-react-router/
 
 * Supports React Router v4 & v5
 * DOM-only (no React Native support)
-* [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter)-only (not tested with HashRouter)
+* Supports [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) and [`HashRouter`](https://reacttraining.com/react-router/web/api/HashRouter)
 * Tested in modern browsers, IE 11, Edge
 * IE 9 and 10 _might_ work, PRs welcome 🤷
 
@@ -140,6 +140,9 @@ const settings = {
   disableAutoScrollRestoration: true,
   announcePageNavigation: true,
   setPageTitle: false,
+  handleHashFragment: true,
+  // Set this to false if you are using HashRouter or MemoryRouter.
+  restorePageStateOnPop: true,
 };
 
 wrapHistory(history, settings);
