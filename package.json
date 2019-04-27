@@ -20,7 +20,7 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
-    "oaf-routing": "^0.4.1"
+    "oaf-routing": "^0.5.0"
   },
   "peerDependencies": {
     "history": "^4.9.0"

@@ -14,6 +14,11 @@ export const defaultSettings = {
   // TODO
 };
 
+// HACK we need a way to track where focus and scroll were left on the first loaded page
+// but we won't have an entry in history for this initial page, so we just make up a key.
+const keyFromLocation = (location: Location) =>
+  location.key !== undefined ? location.key : "initial";
+
 export const wrapHistory = <A = LocationState>(
   history: History<A>,
   settingsOverrides?: Partial<RouterSettings<Location<A>>>,
@@ -23,13 +28,7 @@ export const wrapHistory = <A = LocationState>(
     ...settingsOverrides,
   };
 
-  const oafRouter = createOafRouter(
-    settings,
-    location => location.hash,
-    // HACK we need a way to track where focus and scroll were left on the first loaded page
-    // but we won't have an entry in history for this initial page, so we just make up a key.
-    location => (location.key !== undefined ? location.key : "initial"),
-  );
+  const oafRouter = createOafRouter(settings, location => location.hash);
 
   oafRouter.handleFirstPageLoad(history.location);
 
@@ -37,12 +36,21 @@ export const wrapHistory = <A = LocationState>(
   let previousLocation = history.location;
 
   const unlisten = history.listen(async (location, action) => {
-    oafRouter.handleLocationChanged(previousLocation, location, action);
+    oafRouter.handleLocationChanged(
+      previousLocation,
+      location,
+      keyFromLocation(location),
+      action,
+    );
     previousLocation = location;
   });
 
   const unblock = history.block((location, action) => {
-    oafRouter.handleLocationWillChange(previousLocation, location, action);
+    oafRouter.handleLocationWillChange(
+      keyFromLocation(previousLocation),
+      keyFromLocation(location),
+      action,
+    );
   });
 
   return () => {
