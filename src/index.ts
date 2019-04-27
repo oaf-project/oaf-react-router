@@ -11,13 +11,7 @@ export { RouterSettings } from "oaf-routing";
 
 export const defaultSettings = {
   ...oafRoutingDefaultSettings,
-  // TODO
 };
-
-// HACK we need a way to track where focus and scroll were left on the first loaded page
-// but we won't have an entry in history for this initial page, so we just make up a key.
-const keyFromLocation = (location: Location) =>
-  location.key !== undefined ? location.key : "initial";
 
 export const wrapHistory = <A = LocationState>(
   history: History<A>,
@@ -35,11 +29,11 @@ export const wrapHistory = <A = LocationState>(
   // tslint:disable-next-line: no-let
   let previousLocation = history.location;
 
-  const unlisten = history.listen(async (location, action) => {
+  const unlisten = history.listen((location, action) => {
     oafRouter.handleLocationChanged(
       previousLocation,
       location,
-      keyFromLocation(location),
+      location.key,
       action,
     );
     previousLocation = location;
@@ -47,8 +41,8 @@ export const wrapHistory = <A = LocationState>(
 
   const unblock = history.block((location, action) => {
     oafRouter.handleLocationWillChange(
-      keyFromLocation(previousLocation),
-      keyFromLocation(location),
+      previousLocation.key,
+      location.key,
       action,
     );
   });
