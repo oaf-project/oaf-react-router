@@ -529,7 +529,7 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-oaf-routing@^0.6.0:
+oaf-routing@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-0.6.1.tgz#ac300b712058e458a05f184d8da2d2bb9ffc02a2"
   integrity sha512-xzN6eIGx0cX2iXMbZpWFGGxmLTUjUWfy7q9qVODo8UU86k1Ru00UL6uLlUzXdqw+Ih5J8YuT0JKn4MGxNwPZpA==
@@ -538,9 +538,9 @@ oaf-routing@^0.6.0:
     unique-selector "^0.4.1"
 
 oaf-side-effects@^0.8.0:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/oaf-side-effects/-/oaf-side-effects-0.8.1.tgz#5c362819ed32741adbd7217c821cd8fbd9927794"
-  integrity sha512-QUIOYgTPToMTfKVST/sWHkD+2NFDtqHzN2c/fH9PbvUF4Qn0NNm3qBZ3FRK6lvSgo06viPSelQnTgre5hgA6xw==
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/oaf-side-effects/-/oaf-side-effects-0.8.2.tgz#3c99bcd8d965be51872dfd039e8d0bdd9a3ec513"
+  integrity sha512-n5UqKM3iKkdOt8TZWKVXP3RbJOaRqV64eMs6lVtTk9E5tGcXTMBxZYhMlcOMVLVAk+DdsxzvK33cF/wG/aFtmQ==
 
 object-assign@^4.0.1:
   version "4.1.1"
@@ -841,22 +841,22 @@ tsutils@^2.29.0:
   dependencies:
     tslib "^1.8.1"
 
-type-coverage-core@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.0.0.tgz#922db6989df5640ba7a9fd752ba9096cefb70902"
-  integrity sha512-va+KXCuugNaWIWEwJpW1QVOJt2pCp+f0qTA/q6UeOt3xLRqko6zK+496whPfo1iw9J7TZHymj4OspTb5OzEu0g==
+type-coverage-core@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.0.1.tgz#5f0be8487e0c28220bb350507b7f2c255f845626"
+  integrity sha512-0EHUwGxcrE6ELc6wkRXLksikbZKaqmaPvVD23eYXHOVxTNdS+b1HmN508hFJrys1Haz3avYxduQEfg3i+2yDVQ==
   dependencies:
     glob "7.1.3"
     tslib "1"
     tsutils "3"
 
-type-coverage@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.0.0.tgz#312f85ec925c82cefd42f88a121f3a977286cf34"
-  integrity sha512-1ONjW3rxXsrIDBc/HWi3Ux2DPm1kOTZnKQTV9E4Wrk9uTqrrP/55MkvbEjiYoqixHvtezJvJG4FIILOcM1XyTQ==
+type-coverage@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.0.1.tgz#c2a88fcb63d883a42beaf9899298dfa8100b53e8"
+  integrity sha512-swCLVLCm4XxRiQaI950tr+nts7pR+3vJMbdQPa/JWCycQO1+AmGA9Sv8N2aaDD5f7cRT6ICB8h4dPXcUmJY3oA==
   dependencies:
     minimist "1.2.0"
-    type-coverage-core "^2.0.0"
+    type-coverage-core "^2.0.1"
 
 typedoc-default-themes@^0.5.0:
   version "0.5.0"

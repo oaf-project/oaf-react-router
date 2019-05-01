@@ -15,12 +15,12 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-immutable": "^5.5.2",
     "tslint-sonarts": "^1.9.0",
-    "type-coverage": "^2.0.0",
+    "type-coverage": "^2.0.1",
     "typedoc": "^0.14.2",
     "typescript": "^3.4.5"
   },
   "dependencies": {
-    "oaf-routing": "^0.6.0"
+    "oaf-routing": "^0.6.1"
   },
   "peerDependencies": {
     "history": "^4.9.0"
