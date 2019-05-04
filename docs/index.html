@@ -76,7 +76,7 @@
 				<ul>
 					<li>Supports React Router v4 &amp; v5</li>
 					<li>DOM-only (no React Native support)</li>
-					<li><a href="https://reacttraining.com/react-router/web/api/BrowserRouter"><code>BrowserRouter</code></a>-only (not tested with HashRouter)</li>
+					<li>Supports <a href="https://reacttraining.com/react-router/web/api/BrowserRouter"><code>BrowserRouter</code></a> and <a href="https://reacttraining.com/react-router/web/api/HashRouter"><code>HashRouter</code></a></li>
 					<li>Tested in modern browsers, IE 11, Edge</li>
 					<li>IE 9 and 10 <em>might</em> work, PRs welcome 🤷</li>
 				</ul>
@@ -146,7 +146,7 @@ npm install oaf-react-router</code></pre>
 <span class="hljs-addition">+ import { createBrowserHistory } from "history";</span>
 <span class="hljs-addition">+ import { wrapHistory } from "oaf-react-router";</span>
 
-<span class="hljs-addition">+ const history = createBrowserHistory();</span>
+<span class="hljs-addition">+ const history = createBrowserHistory(); // or createHashHistory()</span>
 <span class="hljs-addition">+ wrapHistory(history);</span>
 
 ReactDOM.render((
@@ -171,6 +171,12 @@ ReactDOM.render((
   disableAutoScrollRestoration: <span class="hljs-literal">true</span>,
   announcePageNavigation: <span class="hljs-literal">true</span>,
   setPageTitle: <span class="hljs-literal">false</span>,
+  handleHashFragment: <span class="hljs-literal">true</span>,
+  <span class="hljs-comment">// Set this to false if you are using HashRouter or MemoryRouter.</span>
+  restorePageStateOnPop: <span class="hljs-literal">true</span>,
+  <span class="hljs-comment">// Set this to true for smooth scrolling.</span>
+  <span class="hljs-comment">// For browser compatibility you might want iamdustan's smoothscroll polyfill https://github.com/iamdustan/smoothscroll</span>
+  smoothScroll: <span class="hljs-literal">false</span>,
 };
 
 wrapHistory(history, settings);</code></pre>
