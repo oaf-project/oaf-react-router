@@ -40,6 +40,8 @@ export const wrapHistory = <A = unknown>(
     previousLocation = location;
   });
 
+  // TODO history.block's days are numbered.
+  // See https://github.com/ReactTraining/history/issues/690
   const unblock = history.block((location, action) => {
     oafRouter.handleLocationWillChange(
       previousLocation.key,
