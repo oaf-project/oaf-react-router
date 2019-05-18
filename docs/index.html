@@ -78,7 +78,7 @@
 					<li>DOM-only (no React Native support)</li>
 					<li>Supports <a href="https://reacttraining.com/react-router/web/api/BrowserRouter"><code>BrowserRouter</code></a> and <a href="https://reacttraining.com/react-router/web/api/HashRouter"><code>HashRouter</code></a></li>
 					<li>Tested in modern browsers, IE 11, Edge</li>
-					<li>IE 9 and 10 <em>might</em> work, PRs welcome 🤷</li>
+					<li>For IE support you will need to polyfill <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Browser_compatibility">Map</a>. Using <a href="https://github.com/zloirock/core-js">core-js</a>: <code>import &quot;core-js/es6/map&quot;;</code>.</li>
 				</ul>
 				<h2 id="features">Features</h2>
 				<ul>
@@ -164,7 +164,7 @@ ReactDOM.render((
   <span class="hljs-comment">// This assumes you're setting the document title via some other means (e.g. React Helmet).</span>
   <span class="hljs-comment">// If you're not, you should return a unique and descriptive page title for each page</span>
   <span class="hljs-comment">// from this function and set `setPageTitle` to true.</span>
-  documentTitle: <span class="hljs-function">(<span class="hljs-params">location: Location</span>) =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> resolve(<span class="hljs-built_in">document</span>.title))),
+  documentTitle: <span class="hljs-function">(<span class="hljs-params">location: Location</span>) =&gt;</span> <span class="hljs-built_in">document</span>.title,
   <span class="hljs-comment">// BYO localization</span>
   navigationMessage: (title: <span class="hljs-built_in">string</span>, location: Location, action: Action): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
   shouldHandleAction: <span class="hljs-function">(<span class="hljs-params">previousLocation: Location, nextLocation: Location, action: Action</span>) =&gt;</span> <span class="hljs-literal">true</span>,
@@ -215,6 +215,8 @@ wrapHistory(history, settings);</code></pre>
 				<ul>
 					<li><a href="https://github.com/oaf-project/oaf-routing">Oaf Routing</a></li>
 					<li><a href="https://github.com/oaf-project/oaf-side-effects">Oaf Side Effects</a></li>
+					<li><a href="https://github.com/dequelabs/react-axe">React-axe</a></li>
+					<li><a href="https://reactjs.org/docs/accessibility.html">React Accessibility</a></li>
 				</ul>
 			</div>
 		</div>
