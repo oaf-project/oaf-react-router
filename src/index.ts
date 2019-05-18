@@ -24,35 +24,38 @@ export const wrapHistory = <A = unknown>(
 
   const oafRouter = createOafRouter(settings, location => location.hash);
 
-  const initialRoute = history.location;
-  oafRouter.handleFirstPageLoad(initialRoute);
+  const initialLocation = history.location;
+
+  // HACK: We use setTimeout to give React a chance to render before we repair focus.
+  setTimeout(() => {
+    oafRouter.handleFirstPageLoad(initialLocation);
+  }, settings.renderTimeout);
 
   // tslint:disable-next-line: no-let
-  let previousLocation = initialRoute;
+  let previousLocation = initialLocation;
 
   const unlisten = history.listen((location, action) => {
-    oafRouter.handleLocationChanged(
-      previousLocation,
-      location,
-      location.key,
-      action,
-    );
-    previousLocation = location;
-  });
-
-  // TODO history.block's days are numbered.
-  // See https://github.com/ReactTraining/history/issues/690
-  const unblock = history.block((location, action) => {
     oafRouter.handleLocationWillChange(
       previousLocation.key,
       location.key,
       action,
     );
+
+    // HACK: We use setTimeout to give React a chance to render before we repair focus.
+    setTimeout(() => {
+      oafRouter.handleLocationChanged(
+        previousLocation,
+        location,
+        location.key,
+        action,
+      );
+    }, settings.renderTimeout);
+
+    previousLocation = location;
   });
 
   return () => {
     oafRouter.resetAutoScrollRestoration();
     unlisten();
-    unblock();
   };
 };
