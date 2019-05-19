@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/oaf-project/oaf-react-router.svg?branch=master)](https://travis-ci.org/oaf-project/oaf-react-router)
+[![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Foaf-project%2Foaf-react-router%2Fmaster%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 [![Known Vulnerabilities](https://snyk.io/test/github/oaf-project/oaf-react-router/badge.svg?targetFile=package.json)](https://snyk.io/test/github/oaf-project/oaf-react-router?targetFile=package.json)
 [![Greenkeeper badge](https://badges.greenkeeper.io/oaf-project/oaf-react-router.svg)](https://greenkeeper.io/)
 [![npm](https://img.shields.io/npm/v/oaf-react-router.svg)](https://www.npmjs.com/package/oaf-react-router)
