@@ -35,6 +35,7 @@ export const wrapHistory = <A = unknown>(
   let previousLocation = initialLocation;
 
   const unlisten = history.listen((location, action) => {
+    // We're the first subscribed listener, so the DOM won't have been updated yet.
     oafRouter.handleLocationWillChange(
       previousLocation.key,
       location.key,
