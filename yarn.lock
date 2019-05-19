@@ -567,10 +567,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-oaf-routing@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-2.0.0.tgz#2867efeacc3669a4e7571397133f3b3770f4fc0b"
-  integrity sha512-Ra0JNL879DFpEyzCEPxJ3yQvLKLPVWnVBsv2OBuH7X3wkW/n1oxO31kvdbs2iCb+FxwGc0uqORE1G2CXf3FOyQ==
+oaf-routing@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-3.0.0.tgz#a0325149fd3f9f8b20685183438e682312638888"
+  integrity sha512-BcATXD1jW8KsANxHuggYTFTuaShiTAWsu91Rcu3H57izR9b9yQe8LHut4d8eSIw6OzQf06VslW5P0bREyVjCZQ==
   dependencies:
     oaf-side-effects "^1.0.3"
     unique-selector "^0.4.1"

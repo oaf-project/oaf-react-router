@@ -1,4 +1,4 @@
-import { History, Location } from "history";
+import { History, Location, LocationKey } from "history";
 import {
   createOafRouter,
   defaultSettings as oafRoutingDefaultSettings,
@@ -12,6 +12,11 @@ export { RouterSettings } from "oaf-routing";
 export const defaultSettings: RouterSettings<Location<unknown>> = {
   ...oafRoutingDefaultSettings,
 };
+
+// HACK we need a way to track where focus and scroll were left on the first loaded page
+// but we won't have an entry in history for this initial page, so we just make up a key.
+const orInitialKey = (key: LocationKey | undefined): LocationKey =>
+  key !== undefined ? key : "initial";
 
 export const wrapHistory = <A = unknown>(
   history: History<A>,
@@ -37,8 +42,8 @@ export const wrapHistory = <A = unknown>(
   const unlisten = history.listen((location, action) => {
     // We're the first subscribed listener, so the DOM won't have been updated yet.
     oafRouter.handleLocationWillChange(
-      previousLocation.key,
-      location.key,
+      orInitialKey(previousLocation.key),
+      orInitialKey(location.key),
       action,
     );
 
@@ -47,7 +52,7 @@ export const wrapHistory = <A = unknown>(
       oafRouter.handleLocationChanged(
         previousLocation,
         location,
-        location.key,
+        orInitialKey(location.key),
         action,
       );
     }, settings.renderTimeout);
