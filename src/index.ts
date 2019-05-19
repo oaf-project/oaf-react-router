@@ -39,7 +39,7 @@ export const wrapHistory = <A = unknown>(
   // tslint:disable-next-line: no-let
   let previousLocation = initialLocation;
 
-  const unlisten = history.listen((location, action) => {
+  const unlisten = history.listen((location: Location<A>, action) => {
     // We're the first subscribed listener, so the DOM won't have been updated yet.
     oafRouter.handleLocationWillChange(
       orInitialKey(previousLocation.key),

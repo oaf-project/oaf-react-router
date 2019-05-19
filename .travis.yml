@@ -4,5 +4,5 @@ install:
 script:
   - yarn build
   - yarn lint
-  - yarn type-coverage
+  - yarn type-coverage --strict --detail
   - yarn format-lint
