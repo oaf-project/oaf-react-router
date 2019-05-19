@@ -38,6 +38,6 @@
     "trailingComma": "all"
   },
   "typeCoverage": {
-    "atLeast": 98
+    "atLeast": 100
   }
 }
