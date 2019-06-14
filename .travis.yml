@@ -6,3 +6,4 @@ script:
   - yarn lint
   - yarn type-coverage --strict --detail
   - yarn format-lint
+  - yarn test

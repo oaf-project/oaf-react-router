@@ -9,15 +9,19 @@
   },
   "devDependencies": {
     "@types/history": "^4.7.2",
+    "@types/jest": "^24.0.14",
+    "history": "^4.9.0",
+    "jest": "^24.8.0",
     "prettier": "^1.18.2",
     "prettylint": "^1.0.0",
+    "ts-jest": "^24.0.2",
     "tslint": "^5.17.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-immutable": "^6.0.0",
     "tslint-sonarts": "^1.9.0",
     "type-coverage": "^2.0.2",
     "typedoc": "^0.14.2",
-    "typescript": "^3.5.1"
+    "typescript": "^3.5.2"
   },
   "dependencies": {
     "oaf-routing": "^3.0.0"
@@ -31,7 +35,8 @@
     "format": "prettier --write '{src,test}/**/*.{ts,tsx}'",
     "format-lint": "prettylint '{src,test}/**/*.{ts,tsx}'",
     "documentation": "typedoc --excludeNotExported --excludePrivate --out docs src && cp docs_config.yml ./docs/_config.yml",
-    "release": "yarn build && yarn lint && yarn type-coverage && yarn format-lint && yarn publish && yarn documentation"
+    "release": "yarn build && yarn lint && yarn type-coverage && yarn format-lint && yarn publish && yarn documentation",
+    "test": "jest"
   },
   "prettier": {
     "trailingComma": "all"
