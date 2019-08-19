@@ -63,24 +63,32 @@
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
 				<p><a href="https://travis-ci.org/oaf-project/oaf-react-router"><img src="https://travis-ci.org/oaf-project/oaf-react-router.svg?branch=master" alt="Build Status"></a>
+					<a href="https://github.com/plantain-00/type-coverage"><img src="https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Foaf-project%2Foaf-react-router%2Fmaster%2Fpackage.json" alt="type-coverage"></a>
 					<a href="https://snyk.io/test/github/oaf-project/oaf-react-router?targetFile=package.json"><img src="https://snyk.io/test/github/oaf-project/oaf-react-router/badge.svg?targetFile=package.json" alt="Known Vulnerabilities"></a>
 					<a href="https://greenkeeper.io/"><img src="https://badges.greenkeeper.io/oaf-project/oaf-react-router.svg" alt="Greenkeeper badge"></a>
 				<a href="https://www.npmjs.com/package/oaf-react-router"><img src="https://img.shields.io/npm/v/oaf-react-router.svg" alt="npm"></a></p>
 				<p><a href="https://david-dm.org/oaf-project/oaf-react-router"><img src="https://david-dm.org/oaf-project/oaf-react-router/status.svg" alt="dependencies Status"></a>
 					<a href="https://david-dm.org/oaf-project/oaf-react-router?type=dev"><img src="https://david-dm.org/oaf-project/oaf-react-router/dev-status.svg" alt="devDependencies Status"></a>
 				<a href="https://david-dm.org/oaf-project/oaf-react-router?type=peer"><img src="https://david-dm.org/oaf-project/oaf-react-router/peer-status.svg" alt="peerDependencies Status"></a></p>
-				<h1 id="oaf-react-router">Oaf React Router</h1>
+				<a href="#oaf-react-router" id="oaf-react-router" style="color: inherit; text-decoration: none;">
+					<h1>Oaf React Router</h1>
+				</a>
 				<p>An accessible wrapper for <a href="https://reacttraining.com/react-router/">React Router</a>.</p>
 				<p>Documentation at <a href="https://oaf-project.github.io/oaf-react-router/">https://oaf-project.github.io/oaf-react-router/</a></p>
-				<h2 id="compatibility">Compatibility</h2>
+				<a href="#compatibility" id="compatibility" style="color: inherit; text-decoration: none;">
+					<h2>Compatibility</h2>
+				</a>
 				<ul>
 					<li>Supports React Router v4 &amp; v5</li>
 					<li>DOM-only (no React Native support)</li>
 					<li>Supports <a href="https://reacttraining.com/react-router/web/api/BrowserRouter"><code>BrowserRouter</code></a> and <a href="https://reacttraining.com/react-router/web/api/HashRouter"><code>HashRouter</code></a></li>
+					<li>Works with <a href="https://github.com/supasate/connected-react-router">Connected React Router</a></li>
 					<li>Tested in modern browsers, IE 11, Edge</li>
 					<li>For IE support you will need to polyfill <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Browser_compatibility">Map</a>. Using <a href="https://github.com/zloirock/core-js">core-js</a>: <code>import &quot;core-js/es6/map&quot;;</code>.</li>
 				</ul>
-				<h2 id="features">Features</h2>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
 				<ul>
 					<li>Reset scroll and focus after PUSH and REPLACE navigation</li>
 					<li>Restore scroll and focus after POP navigation</li>
@@ -88,7 +96,9 @@
 					<li>Announce navigation to users of screen readers</li>
 					<li>Hash fragment support</li>
 				</ul>
-				<h3 id="reset-scroll-and-focus-after-push-and-replace-navigation">Reset scroll and focus after PUSH and REPLACE navigation</h3>
+				<a href="#reset-scroll-and-focus-after-push-and-replace-navigation" id="reset-scroll-and-focus-after-push-and-replace-navigation" style="color: inherit; text-decoration: none;">
+					<h3>Reset scroll and focus after PUSH and REPLACE navigation</h3>
+				</a>
 				<p><a href="https://reacttraining.com/react-router/web/guides/scroll-restoration">React Router does not reset the window&#39;s scroll position or the focused element</a> after page navigation.</p>
 				<p>The React Router documentation sketches a <a href="https://reacttraining.com/react-router/web/guides/scroll-restoration/scroll-to-top">&quot;scroll to top&quot; approach</a> that scrolls the window back to the top of the page after navigation, emulating native browser behavior. There are also packages to do this for you, such as <a href="https://github.com/trevorr/react-scroll-manager">trevorr/react-scroll-manager</a> or <a href="https://github.com/bluframe/react-router-scroll-top/issues/10">react-router-scroll-top</a>. Unfortunately, these approaches address only the scroll half of the question, <a href="http://simplyaccessible.com/article/spangular-accessibility/#acc-heading-3">ignoring keyboard focus</a>:</p>
 				<blockquote>
@@ -103,7 +113,9 @@
 					<li><a href="https://github.com/ReactTraining/react-router/issues/5210">https://github.com/ReactTraining/react-router/issues/5210</a></li>
 					<li><a href="https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf">https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf</a></li>
 				</ul>
-				<h3 id="restore-scroll-and-focus-after-pop-navigation">Restore scroll and focus after POP navigation</h3>
+				<a href="#restore-scroll-and-focus-after-pop-navigation" id="restore-scroll-and-focus-after-pop-navigation" style="color: inherit; text-decoration: none;">
+					<h3>Restore scroll and focus after POP navigation</h3>
+				</a>
 				<p>After a POP navigation (i.e. after navigation back or forward through history) browsers typically restore focus and scroll position to where they were when the user last navigated away from that page.</p>
 				<p><a href="https://reacttraining.com/react-router/web/guides/scroll-restoration/generic-solution">React Router does not emulate this</a>, so Oaf React Router takes care of it for you. Note that browsers such as Firefox and Safari will restore <em>both</em> scroll position and the last focused element, but for some reason Chrome restores <em>only</em> the scroll position, not the focused element. To imitate this, Oaf React Router will move focus to the <em>primary focus target</em> (as described in the previous section) instead of to the last focused element when a POP navigation occurs in Chrome.</p>
 				<p>Note that there is a <a href="https://majido.github.io/scroll-restoration-proposal/history-based-api.html">proposed scroll restoration standard</a> but it is not widely implemented and it only addresses scroll position, not focus (notice a theme emerging?) so it is of no use to us.</p>
@@ -113,13 +125,17 @@
 					<li><a href="https://developer.mozilla.org/de/docs/Web/API/History#Browser_compatibility">https://developer.mozilla.org/de/docs/Web/API/History#Browser_compatibility</a></li>
 					<li><a href="https://github.com/Fyrd/caniuse/issues/1889">https://github.com/Fyrd/caniuse/issues/1889</a></li>
 				</ul>
-				<h3 id="set-the-page-title-after-navigation">Set the page title after navigation</h3>
+				<a href="#set-the-page-title-after-navigation" id="set-the-page-title-after-navigation" style="color: inherit; text-decoration: none;">
+					<h3>Set the page title after navigation</h3>
+				</a>
 				<p><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">Every page in your React app must have a unique and descriptive title</a>. Oaf React Router will set the page title for you using a function that maps from <code>location</code>s to page titles. You must supply this function. For how to provide this function, see the usage section below.</p>
 				<p>See:</p>
 				<ul>
 					<li><a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html">https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-title.html</a></li>
 				</ul>
-				<h3 id="announce-navigation-to-users-of-screen-readers">Announce navigation to users of screen readers</h3>
+				<a href="#announce-navigation-to-users-of-screen-readers" id="announce-navigation-to-users-of-screen-readers" style="color: inherit; text-decoration: none;">
+					<h3>Announce navigation to users of screen readers</h3>
+				</a>
 				<p>Oaf React Router will announce page navigation events to screen reader users via a <a href="https://a11yproject.com/posts/how-to-hide-content/">visually hidden</a> <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions"><code>aria-live</code></a> element. <a href="https://almerosteyn.com/2017/03/accessible-react-navigation">Announcing navigation is required</a> because:</p>
 				<blockquote><p>Screen readers are clever enough to read a lot of information that the browser expose naturally, but if no information exists to read out, the screen reader will remain ominously silent, even if something very important has happened on screen.</p>
 					<p>Unfortunately, this is the case with many routed SPA applications today. Screen readers are able to recognise actual browser navigation very easily as the browser will tell the screen reader that it has navigated to another web page. In the case of SPAs, like those built with React or Angular, the router software will take over some of the navigation actions from the browser in order to control the application without constantly reloading the host HTML page.</p>
@@ -129,18 +145,24 @@
 				<ul>
 					<li><a href="https://almerosteyn.com/2017/03/accessible-react-navigation">https://almerosteyn.com/2017/03/accessible-react-navigation</a></li>
 				</ul>
-				<h3 id="hash-fragment-support">Hash fragment support</h3>
+				<a href="#hash-fragment-support" id="hash-fragment-support" style="color: inherit; text-decoration: none;">
+					<h3>Hash fragment support</h3>
+				</a>
 				<p>Another native browser feature that React Router doesn&#39;t emulate is scrolling to the element identified by the hash fragment in a URL. For example, if you load <a href="https://en.wikipedia.org/wiki/Firefox#Performance">https://en.wikipedia.org/wiki/Firefox#Performance</a>, your browser will scroll down to the <code>&lt;span id=&quot;Performance&quot;&gt;</code> automatically.</p>
 				<p>There are other libraries that tackle this issue—for example <a href="https://github.com/rafrex/react-router-hash-link">rafrex/react-router-hash-link</a>—but they typically only address scroll to the exclusion of focus (there&#39;s that theme again).</p>
 				<p>Oaf React Router implements this for you, taking care of both focus and scroll.</p>
 				<p>A caveat here is that the identified element must exist in the DOM straight after the route is rendered. If the element won&#39;t exist for some time, e.g. until after an API response, then Oaf React Router won&#39;t focus or scroll to it, falling back on the primary focus target.</p>
-				<h2 id="installation">Installation</h2>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
 				<pre><code class="language-sh"><span class="hljs-comment"># yarn</span>
 yarn add oaf-react-router
 
 <span class="hljs-comment"># npm</span>
 npm install oaf-react-router</code></pre>
-				<h2 id="basic-usage">Basic Usage</h2>
+				<a href="#basic-usage" id="basic-usage" style="color: inherit; text-decoration: none;">
+					<h2>Basic Usage</h2>
+				</a>
 				<pre><code class="language-diff"><span class="hljs-deletion">- import { BrowserRouter as Router } from "react-router-dom";</span>
 <span class="hljs-addition">+ import { Router } from "react-router-dom";</span>
 <span class="hljs-addition">+ import { createBrowserHistory } from "history";</span>
@@ -155,7 +177,9 @@ ReactDOM.render((
     ...
   &lt;/Router&gt;
 ), document.getElementById("root"));</code></pre>
-				<h2 id="advanced-usage">Advanced Usage</h2>
+				<a href="#advanced-usage" id="advanced-usage" style="color: inherit; text-decoration: none;">
+					<h2>Advanced Usage</h2>
+				</a>
 				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> history = createBrowserHistory();
 
 <span class="hljs-keyword">const</span> settings = {
@@ -180,7 +204,9 @@ ReactDOM.render((
 };
 
 wrapHistory(history, settings);</code></pre>
-				<h3 id="a-note-on-setting-document-title">A note on setting document title</h3>
+				<a href="#a-note-on-setting-document-title" id="a-note-on-setting-document-title" style="color: inherit; text-decoration: none;">
+					<h3>A note on setting document title</h3>
+				</a>
 				<p>You may already be using <a href="https://github.com/nfl/react-helmet">React Helmet</a> or some other technique to set the document title on route change. That&#39;s fine, just be mindful of how you might announce page navigation to users of screen readers and other assistive technology.</p>
 				<p>In the case of React Helmet, you might do something like this:</p>
 				<ol>
@@ -188,7 +214,9 @@ wrapHistory(history, settings);</code></pre>
 					<li>Add a handler function to <a href="https://github.com/nfl/react-helmet#reference-guide">React Helmet&#39;s <code>onChangeClientState</code> callback</a>.</li>
 					<li>Announce page navigation using something like <a href="https://oaf-project.github.io/oaf-side-effects/modules/_index_.html#announce">the <code>announce</code> function from Oaf Side Effects</a> (which is what Oaf React Router itself uses).</li>
 				</ol>
-				<h3 id="a-note-on-focus-outlines">A note on focus outlines</h3>
+				<a href="#a-note-on-focus-outlines" id="a-note-on-focus-outlines" style="color: inherit; text-decoration: none;">
+					<h3>A note on focus outlines</h3>
+				</a>
 				<p>You may see focus outlines around your <code>h1</code> elements (or elsewhere, per <code>primaryFocusTarget</code>) when using Oaf React Router.</p>
 				<p>You might be tempted to remove these focus outlines with something like the following:</p>
 				<pre><code class="language-css"><span class="hljs-selector-attr">[tabindex="-1"]</span><span class="hljs-selector-pseudo">:focus</span> {
@@ -202,7 +230,9 @@ wrapHistory(history, settings);</code></pre>
 				</ul>
 				<p>Note that <a href="https://github.com/twbs/bootstrap/issues/28425">Bootstrap 4 unfortunately removes these focus outlines</a>. If you use Bootstrap, you can restore them with <a href="https://github.com/oaf-project/oaf-bootstrap-4">Oaf Bootstrap 4</a>.</p>
 				<p>All that said, if you absolutely <em>must</em> remove focus outlines (stubborn client, stubborn boss, stubborn designer, whatever), consider using the <a href="https://github.com/WICG/focus-visible"><code>:focus-visible</code> polyfill</a> so focus outlines are only hidden from mouse users, <em>not</em> keyboard users.</p>
-				<h2 id="inspiration-and-prior-art">Inspiration and prior art</h2>
+				<a href="#inspiration-and-prior-art" id="inspiration-and-prior-art" style="color: inherit; text-decoration: none;">
+					<h2>Inspiration and prior art</h2>
+				</a>
 				<ul>
 					<li><a href="https://github.com/rafrex/react-router-hash-link">https://github.com/rafrex/react-router-hash-link</a></li>
 					<li><a href="https://github.com/trevorr/react-scroll-manager">https://github.com/trevorr/react-scroll-manager</a></li>
@@ -211,7 +241,9 @@ wrapHistory(history, settings);</code></pre>
 					<li><a href="https://reach.tech/router/accessibility">https://reach.tech/router/accessibility</a></li>
 					<li><a href="https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf">https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf</a></li>
 				</ul>
-				<h2 id="see-also">See also</h2>
+				<a href="#see-also" id="see-also" style="color: inherit; text-decoration: none;">
+					<h2>See also</h2>
+				</a>
 				<ul>
 					<li><a href="https://github.com/oaf-project/oaf-routing">Oaf Routing</a></li>
 					<li><a href="https://github.com/oaf-project/oaf-side-effects">Oaf Side Effects</a></li>
@@ -228,6 +260,9 @@ wrapHistory(history, settings);</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_index_.html">"index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_index_test_.html">"index.test"</a>
 					</li>
 				</ul>
 			</nav>
@@ -250,6 +285,7 @@ wrapHistory(history, settings);</code></pre>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -298,7 +334,7 @@ wrapHistory(history, settings);</code></pre>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
