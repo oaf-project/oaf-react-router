@@ -48,9 +48,10 @@ export const wrapHistory = <A = unknown>(
     );
 
     // HACK: We use setTimeout to give React a chance to render before we repair focus.
+    const stablePreviousLocation = previousLocation;
     setTimeout(() => {
       oafRouter.handleLocationChanged(
-        previousLocation,
+        stablePreviousLocation,
         location,
         orInitialKey(location.key),
         action,
