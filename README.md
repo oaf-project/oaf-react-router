@@ -93,7 +93,7 @@ There are other libraries that tackle this issue—for example [rafrex/react-rou
 
 Oaf React Router implements this for you, taking care of both focus and scroll.
 
-A caveat here is that the identified element must exist in the DOM straight after the route is rendered. If the element won't exist for some time, e.g. until after an API response, then Oaf React Router won't focus or scroll to it, falling back on the primary focus target.
+A [caveat](https://github.com/oaf-project/oaf-react-router/issues/8) here is that the identified element must exist in the DOM straight after the route is rendered. If the element won't exist for some time, e.g. until after an API response, then Oaf React Router won't focus or scroll to it, falling back on the primary focus target.
 
 ## Installation
 
