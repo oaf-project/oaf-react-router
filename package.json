@@ -9,25 +9,25 @@
   },
   "devDependencies": {
     "@types/history": "^4.7.3",
-    "@types/jest": "^24.0.18",
+    "@types/jest": "^24.0.23",
     "history": "^4.10.1",
     "jest": "^24.9.0",
-    "prettier": "^1.18.2",
+    "prettier": "^1.19.1",
     "prettylint": "^1.0.0",
     "ts-jest": "^24.1.0",
-    "tslint": "^5.20.0",
+    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-immutable": "^6.0.1",
     "tslint-sonarts": "^1.9.0",
     "type-coverage": "^2.3.0",
-    "typedoc": "^0.15.0",
-    "typescript": "^3.6.3"
+    "typedoc": "^0.15.1",
+    "typescript": "^3.7.2"
   },
   "dependencies": {
     "oaf-routing": "^3.0.1"
   },
   "peerDependencies": {
-    "history": "^4.9.0"
+    "history": "^4.10.1"
   },
   "scripts": {
     "build": "tsc",
