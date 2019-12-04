@@ -138,6 +138,7 @@ const settings = {
   documentTitle: (location: Location) => document.title,
   // BYO localization
   navigationMessage: (title: string, location: Location, action: Action): string => `Navigated to ${title}.`,
+  // Return false if you're handling focus yourself for a specific history action.
   shouldHandleAction: (previousLocation: Location, nextLocation: Location, action: Action) => true,
   disableAutoScrollRestoration: true,
   announcePageNavigation: true,
