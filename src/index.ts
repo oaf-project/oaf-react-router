@@ -1,11 +1,13 @@
+/* eslint-disable functional/functional-parameters */
+/* eslint-disable functional/no-return-void */
+/* eslint-disable functional/no-expression-statement */
+
 import { History, Location, LocationKey } from "history";
 import {
   createOafRouter,
   defaultSettings as oafRoutingDefaultSettings,
   RouterSettings,
 } from "oaf-routing";
-
-// tslint:disable: no-expression-statement
 
 export { RouterSettings } from "oaf-routing";
 
@@ -36,7 +38,7 @@ export const wrapHistory = <A = unknown>(
     oafRouter.handleFirstPageLoad(initialLocation);
   }, settings.renderTimeout);
 
-  // tslint:disable-next-line: no-let
+  // eslint-disable-next-line functional/no-let
   let previousLocation = initialLocation;
 
   const unlisten = history.listen((location: Location<A>, action) => {

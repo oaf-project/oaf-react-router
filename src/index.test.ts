@@ -1,14 +1,17 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
+/* eslint-disable @typescript-eslint/unbound-method */
+/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable functional/immutable-data */
+/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/functional-parameters */
+
 import { createBrowserHistory, History } from "history";
 import { wrapHistory } from ".";
 
-// tslint:disable-next-line: no-commented-code
-// tslint:disable: no-expression-statement
-// tslint:disable: object-literal-sort-keys
-// tslint:disable: no-duplicate-string
-// tslint:disable: no-object-mutation
-
 // HACK: wait for history wrapper to update DOM.
-const waitForDomUpdate = () => new Promise(resolve => setTimeout(resolve));
+const waitForDomUpdate = (): Promise<void> =>
+  new Promise(resolve => setTimeout(resolve));
 
 beforeEach(() => {
   // Clear previous test's DOM.
@@ -82,7 +85,6 @@ describe("oaf-react-router", () => {
 
     const main = document.createElement("main");
     const mainH1 = document.createElement("h1");
-    // tslint:disable-next-line: no-empty
     mainH1.focus = () => {};
     main.append(mainH1);
     const randomButton = document.createElement("button");
