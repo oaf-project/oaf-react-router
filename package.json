@@ -24,8 +24,8 @@
     "history": "^4.10.1",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
-    "ts-jest": "^25.0.0",
     "total-functions": "^0.1.0",
+    "ts-jest": "^25.0.0",
     "type-coverage": "^2.4.0",
     "typedoc": "^0.16.9",
     "typescript": "^3.7.5"
