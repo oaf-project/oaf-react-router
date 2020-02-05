@@ -39,7 +39,7 @@ The React Router documentation sketches a ["scroll to top" approach](https://rea
 
 > One of the unique features of single page applications that can create challenges for people using screen readers is that there’s never a page refresh, only view refreshes. As a result, the focused element often disappears from the interface, and the person using the screen reader is left searching for clues as to what happened and what’s now showing in the application view. Places where focus is commonly lost include: page changes, item deleting, modal closing, and expanding and closing record details.
 
-Oaf React Router fixes this by moving focus to something it calls the "primary focus target" after navigation, which by default is the first `h1` element inside the page's `main` element, but this is configurable.
+Oaf React Router fixes this by moving focus to something it calls the "primary focus target" after navigation, which by default is the first `h1` element inside the page's `main` element, but this is configurable. For advice on what this focus target should be, see [Marcy Sutton's recommendations](https://www.gatsbyjs.org/blog/2019-07-11-user-testing-accessible-client-routing/#recommendations-finding-common-ground).
 
 In addition to moving focus, Oaf React Router will also scroll the primary focus target into view, so you don't need to worry about scrolling to the top of the page after a page navigation.
 
@@ -49,6 +49,7 @@ See:
 * https://reacttraining.com/react-router/web/guides/scroll-restoration
 * https://github.com/ReactTraining/react-router/issues/5210
 * https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf
+* https://www.gatsbyjs.org/blog/2019-07-11-user-testing-accessible-client-routing
 
 ### Restore scroll and focus after POP navigation
 
@@ -178,6 +179,7 @@ Don't do this! Focus outlines are important for accessibility. See for example:
 * https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html
 * https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/F78
 * http://www.outlinenone.com/
+* Although there is some debate: https://github.com/w3c/wcag/issues/1001
 
 Note that [Bootstrap 4 unfortunately removes these focus outlines](https://github.com/twbs/bootstrap/issues/28425). If you use Bootstrap, you can restore them with [Oaf Bootstrap 4](https://github.com/oaf-project/oaf-bootstrap-4).
 
