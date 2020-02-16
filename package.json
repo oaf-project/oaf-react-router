@@ -11,7 +11,7 @@
     "@types/history": "^4.7.5",
     "@types/jest": "^25.1.2",
     "@typescript-eslint/eslint-plugin": "^2.18.0",
-    "@typescript-eslint/parser": "^2.18.0",
+    "@typescript-eslint/parser": "^2.19.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-functional": "^3.0.1",
