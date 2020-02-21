@@ -27,7 +27,7 @@
     "total-functions": "^0.1.0",
     "ts-jest": "^25.1.0",
     "type-coverage": "^2.4.0",
-    "typedoc": "^0.16.9",
+    "typedoc": "^0.16.10",
     "typescript": "^3.8.2"
   },
   "dependencies": {
