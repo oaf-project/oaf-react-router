@@ -26,7 +26,7 @@
     "prettier": "^1.19.1",
     "total-functions": "^0.1.0",
     "ts-jest": "^25.2.1",
-    "type-coverage": "^2.4.0",
+    "type-coverage": "^2.4.2",
     "typedoc": "^0.16.10",
     "typescript": "^3.8.2"
   },
