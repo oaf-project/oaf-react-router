@@ -20,13 +20,28 @@ beforeEach(() => {
 });
 
 describe("oaf-react-router", () => {
+  // eslint-disable-next-line jest/expect-expect
   test("doesn't throw when wrapping and unwrapping history", () => {
     const history: History<unknown> = createBrowserHistory();
     const unwrap = wrapHistory(history);
     unwrap();
   });
 
-  test("sets the document title", async () => {
+  test("sets the document title after initial render", async () => {
+    const history: History<unknown> = createBrowserHistory();
+    wrapHistory(history, {
+      setPageTitle: true,
+      documentTitle: () => "test title",
+    });
+
+    expect(document.title).toBe("");
+
+    await waitForDomUpdate();
+
+    expect(document.title).toBe("test title");
+  });
+
+  test("sets the document title after a navigation", async () => {
     const history: History<unknown> = createBrowserHistory();
     wrapHistory(history, {
       setPageTitle: true,
