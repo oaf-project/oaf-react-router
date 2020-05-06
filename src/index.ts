@@ -29,7 +29,7 @@ export const wrapHistory = <A = unknown>(
     ...settingsOverrides,
   };
 
-  const oafRouter = createOafRouter(settings, location => location.hash);
+  const oafRouter = createOafRouter(settings, (location) => location.hash);
 
   const initialLocation = history.location;
 

@@ -11,7 +11,7 @@ import { wrapHistory } from ".";
 
 // HACK: wait for history wrapper to update DOM.
 const waitForDomUpdate = (): Promise<void> =>
-  new Promise(resolve => setTimeout(resolve));
+  new Promise((resolve) => setTimeout(resolve));
 
 beforeEach(() => {
   // Clear previous test's DOM.
