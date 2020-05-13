@@ -28,7 +28,7 @@
     "ts-jest": "^25.4.0",
     "type-coverage": "^2.5.0",
     "typedoc": "^0.17.6",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.2"
   },
   "dependencies": {
     "oaf-routing": "^4.0.0"
