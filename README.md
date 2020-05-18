@@ -16,7 +16,7 @@ Documentation at https://oaf-project.github.io/oaf-react-router/
 
 ## Compatibility
 
-* Supports React Router v4 & v5
+* Tested with React Router v5
 * DOM-only (no React Native support)
 * Supports [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) and [`HashRouter`](https://reacttraining.com/react-router/web/api/HashRouter)
 * Works with [Connected React Router](https://github.com/supasate/connected-react-router)
