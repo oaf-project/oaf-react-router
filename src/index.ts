@@ -35,6 +35,7 @@ export const wrapHistory = <A = unknown>(
 
   // HACK: We use setTimeout to give React a chance to render before we repair focus.
   setTimeout(() => {
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
     oafRouter.handleFirstPageLoad(initialLocation);
   }, settings.renderTimeout);
 
@@ -52,6 +53,7 @@ export const wrapHistory = <A = unknown>(
     // HACK: We use setTimeout to give React a chance to render before we repair focus.
     const stablePreviousLocation = previousLocation;
     setTimeout(() => {
+      // eslint-disable-next-line @typescript-eslint/no-floating-promises
       oafRouter.handleLocationChanged(
         stablePreviousLocation,
         location,
@@ -63,7 +65,7 @@ export const wrapHistory = <A = unknown>(
     previousLocation = location;
   });
 
-  return () => {
+  return (): void => {
     oafRouter.resetAutoScrollRestoration();
     unlisten();
   };
