@@ -10,9 +10,9 @@
   "devDependencies": {
     "@types/history": "^4.7.6",
     "@types/jest": "^25.2.3",
-    "@typescript-eslint/eslint-plugin": "^3.0.2",
-    "@typescript-eslint/parser": "^3.0.2",
-    "eslint": "^7.1.0",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-functional": "^3.0.1",
     "eslint-plugin-jest": "^23.13.2",
@@ -21,14 +21,15 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "eslint-plugin-sonarjs": "^0.5.0",
+    "eslint-plugin-total-functions": "^1.1.0",
     "history": "^4.10.1",
     "jest": "^26.0.1",
     "prettier": "^2.0.5",
-    "total-functions": "^1.0.0",
-    "ts-jest": "^26.0.0",
-    "type-coverage": "^2.7.0",
+    "total-functions": "^3.0.0",
+    "ts-jest": "^26.1.0",
+    "type-coverage": "^2.7.1",
     "typedoc": "^0.17.7",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   },
   "dependencies": {
     "oaf-routing": "^4.0.0"

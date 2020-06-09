@@ -16,6 +16,7 @@ module.exports = {
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:total-functions/recommended",
     "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
@@ -33,6 +34,7 @@ module.exports = {
     "react-hooks",
     "@typescript-eslint",
     "prettier",
+    "total-functions"
     // TODO replace tslint's no-any and no-unsafe-any
     // See https://github.com/typescript-eslint/typescript-eslint/issues/791
   ],
@@ -49,8 +51,6 @@ module.exports = {
     "react-hooks/exhaustive-deps": "error",
     // Don't need prop types when you have... actual types
     "react/prop-types": 0,
-    // https://github.com/danielnixon/total-functions
-    "no-array-subscript": "error",
     "@typescript-eslint/ban-types": [
       "error",
       {
