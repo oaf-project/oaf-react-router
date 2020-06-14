@@ -2057,7 +2057,7 @@ highlight.js@^10.0.0:
   resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.1.0.tgz#b194ec07ed2ad50a695d0605d5cbe726c9c39d2a"
   integrity sha512-e8aO/LUHDoxW4ntyKQf0/T3OtIZPhsfTr8XRuOq+FW5VdWEg/UDAeArzKF/22BaNZp6hPi/Zu/XQlTLOGLix3Q==
 
-history@^4.9.0:
+history@^4.10.1:
   version "4.10.1"
   resolved "https://registry.yarnpkg.com/history/-/history-4.10.1.tgz#33371a65e3a83b267434e2b3f3b1b4c58aad4cf3"
   integrity sha512-36nwAD620w12kuzPAsyINPWJqlNbij+hpK1k9XRloDtym8mxzGYl2c17LnV6IAGB2Dmg4tEa7G7DlawS0+qjew==
