@@ -20,7 +20,7 @@ Documentation at https://oaf-project.github.io/oaf-react-router/
 * Supports [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) and [`HashRouter`](https://reacttraining.com/react-router/web/api/HashRouter)
 * Works with [Connected React Router](https://github.com/supasate/connected-react-router)
 * Tested in modern browsers, IE 11, Edge
-* For IE support you will need to polyfill [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Browser_compatibility). Using [core-js](https://github.com/zloirock/core-js): `import "core-js/es6/map";`.
+* For (full) IE support you will need to polyfill [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Browser_compatibility). Using [core-js](https://github.com/zloirock/core-js): `import "core-js/es6/map";`.
 
 ## Features
 
