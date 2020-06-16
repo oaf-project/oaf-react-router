@@ -8,6 +8,9 @@
     "url": "https://github.com/oaf-project/oaf-react-router.git"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^3.2.4",
+    "@stryker-mutator/jest-runner": "^3.2.4",
+    "@stryker-mutator/typescript": "^3.2.4",
     "@types/history": "^4.7.6",
     "@types/jest": "^26.0.0",
     "@typescript-eslint/eslint-plugin": "^3.2.0",
