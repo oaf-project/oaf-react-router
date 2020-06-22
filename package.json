@@ -30,7 +30,7 @@
     "prettier": "^2.0.5",
     "total-functions": "^3.0.0",
     "ts-jest": "^26.1.0",
-    "type-coverage": "^2.8.0",
+    "type-coverage": "^2.8.2",
     "typedoc": "^0.17.7",
     "typescript": "^3.9.5"
   },
