@@ -552,7 +552,7 @@
     semver "~6.3.0"
     tslib "~2.0.0"
 
-"@stryker-mutator/util@^3.3.0", "@stryker-mutator/util@^3.3.1":
+"@stryker-mutator/util@^3.3.1":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@stryker-mutator/util/-/util-3.3.1.tgz#a530cc62eb022f30ca419ee62f1bebe6ee46c95b"
   integrity sha512-JE9PT6/Fqo4343fQWb3YzbkGmBU4bUeuynYhsTeDmY0fhTT653oGHeyEKWeV39/kgSyKfIpY5ABb1RvJclOgkg==
@@ -1652,10 +1652,10 @@ eslint-plugin-sonarjs@^0.5.0:
   resolved "https://registry.yarnpkg.com/eslint-plugin-sonarjs/-/eslint-plugin-sonarjs-0.5.0.tgz#ce17b2daba65a874c2862213a9e38e8986ad7d7d"
   integrity sha512-XW5MnzlRjhXpIdbULC/qAdJYHWw3rRLws/DyawdlPU/IdVr9AmRK1r2LaCvabwKOAW2XYYSo3kDX58E4MrB7PQ==
 
-eslint-plugin-total-functions@^1.35.2:
-  version "1.35.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-total-functions/-/eslint-plugin-total-functions-1.35.2.tgz#4ab7289f66f5f7d37e384849c7c0bf30c2ef5a85"
-  integrity sha512-OoFbzOKcqyPZMfWQYUetf5tJENBL+oPUAHro+OLvHzncRpO8JCAez9fClhibG6ID4Ox+pEVaOQ8MfTcigMjvMQ==
+eslint-plugin-total-functions@^1.37.0:
+  version "1.37.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-total-functions/-/eslint-plugin-total-functions-1.37.0.tgz#73931a304086b6591538b582c2b1247cfeb0fa10"
+  integrity sha512-wH2vUVD5ngVDI0kEZ84haMacX5SIeKIbel9r3Hp4nPZtPx2UaKsDzvEQ2BJ94spayiXD7d3Xp6O0PS6Mobj91w==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^3.5.0"
     "@typescript-eslint/experimental-utils" "^3.5.0"
