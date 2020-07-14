@@ -29,7 +29,7 @@
     "jest": "^26.1.0",
     "prettier": "^2.0.5",
     "total-functions": "^3.0.0",
-    "ts-jest": "^26.1.1",
+    "ts-jest": "^26.1.2",
     "type-coverage": "^2.8.4",
     "typedoc": "^0.17.7",
     "typescript": "^3.9.6"
