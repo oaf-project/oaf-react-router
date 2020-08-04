@@ -35,7 +35,7 @@
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "oaf-routing": "^4.0.0"
+    "oaf-routing": "^4.0.1"
   },
   "peerDependencies": {
     "history": "^4.10.1"
