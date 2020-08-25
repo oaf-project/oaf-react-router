@@ -27,7 +27,7 @@
     "eslint-plugin-total-functions": "^2.3.1",
     "history": "^4.10.1",
     "jest": "^26.4.2",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.0",
     "total-functions": "^3.0.0",
     "ts-jest": "^26.2.0",
     "type-coverage": "^2.10.0",
