@@ -31,7 +31,7 @@
     "prettier": "^2.2.1",
     "total-functions": "^3.0.0",
     "ts-jest": "^26.4.4",
-    "type-coverage": "^2.14.8",
+    "type-coverage": "^2.14.9",
     "typedoc": "^0.20.14",
     "typescript": "^4.1.3"
   },
