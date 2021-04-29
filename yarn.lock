@@ -3753,17 +3753,17 @@ normalize-package-data@^2.5.0:
     semver "2 || 3 || 4 || 5"
     validate-npm-package-license "^3.0.1"
 
+normalize-path@3, normalize-path@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
+  integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
+
 normalize-path@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-2.1.1.tgz#1ab28b556e198363a8c1a6f7e6fa20137fe6aed9"
   integrity sha1-GrKLVW4Zg2Oowab35vogE3/mrtk=
   dependencies:
     remove-trailing-separator "^1.0.1"
-
-normalize-path@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-3.0.0.tgz#0dcd69ff23a1c9b11fd0978316644a0388216a65"
-  integrity sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
 
 npm-run-path@^2.0.0:
   version "2.0.2"
@@ -5002,23 +5002,24 @@ type-check@~0.3.2:
   dependencies:
     prelude-ls "~1.1.2"
 
-type-coverage-core@^2.17.2:
-  version "2.17.2"
-  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.17.2.tgz#fd6f077cfcf32b8e82e5784b08e5f6465decd8c3"
-  integrity sha512-J+kKjdJIJetfXkpl1Fg5CFzx09xmFX3aID5w3KJh/RmFSdT05APdPhGxTPMpSSbqNlcDVVnGcVm1LvDZNrlE7A==
+type-coverage-core@^2.17.4:
+  version "2.17.4"
+  resolved "https://registry.yarnpkg.com/type-coverage-core/-/type-coverage-core-2.17.4.tgz#372f51f976372496c387588375bae112bc5e1dbe"
+  integrity sha512-8UhiPK3w8rMPRER3c/kv/Q+sVG957DAlt9tnQtPgIbed7NriDyLW3N8jAO8SmGlmrf5zYINsQ61YGOVUz5TITg==
   dependencies:
     fast-glob "3"
     minimatch "3"
+    normalize-path "3"
     tslib "1 || 2"
     tsutils "3"
 
-type-coverage@^2.17.2:
-  version "2.17.2"
-  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.17.2.tgz#efd29c88372805caae0f8b5cfc9222e1a5775eb8"
-  integrity sha512-kP3uJRZwP+RaXIvJfW9s0ICiHW/9YuIfa06FQmiaARLmqpU5vWgeDZNEDMLuHXZhDt4xnwO5kZVdoK2mPXu4aQ==
+type-coverage@^2.17.4:
+  version "2.17.4"
+  resolved "https://registry.yarnpkg.com/type-coverage/-/type-coverage-2.17.4.tgz#a7d7f2fc08ce095ca4d5e0a248d35d4c41c81e4d"
+  integrity sha512-l2FPYNAkEIiFRcWJbkISQoEhOVa3yOXIbbVOKhCq3mUlI+H7uBQBw7fD2Qu5O87KLqSl/MXC7f98O8N+m65MKA==
   dependencies:
     minimist "1"
-    type-coverage-core "^2.17.2"
+    type-coverage-core "^2.17.4"
 
 type-detect@4.0.8:
   version "4.0.8"
