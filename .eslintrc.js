@@ -11,7 +11,6 @@ module.exports = {
     "plugin:sonarjs/recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:jest/recommended",
-    "prettier/@typescript-eslint",
     "plugin:prettier/recommended",
   ],
   env: {

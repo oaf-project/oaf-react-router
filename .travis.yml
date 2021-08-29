@@ -1,9 +1,0 @@
-language: node_js
-install:
-  - yarn install --frozen-lockfile
-script:
-  - yarn build
-  - yarn lint
-  - yarn type-coverage --strict --detail
-  - yarn test
-  - yarn stryker run

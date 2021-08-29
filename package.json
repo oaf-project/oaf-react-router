@@ -8,32 +8,32 @@
     "url": "https://github.com/oaf-project/oaf-react-router.git"
   },
   "devDependencies": {
-    "@stryker-mutator/core": "^3.3.1",
-    "@stryker-mutator/jest-runner": "^3.3.1",
-    "@stryker-mutator/typescript": "^3.3.1",
-    "@types/history": "^4.7.8",
-    "@types/jest": "^26.0.22",
-    "@typescript-eslint/eslint-plugin": "^4.22.0",
-    "@typescript-eslint/parser": "^4.21.0",
-    "eslint": "^7.24.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-config-typed-fp": "^0.10.0",
-    "eslint-plugin-functional": "^3.2.1",
-    "eslint-plugin-jest": "^24.3.5",
+    "@stryker-mutator/core": "^5.3.0",
+    "@stryker-mutator/jest-runner": "^5.3.0",
+    "@stryker-mutator/typescript-checker": "^5.3.0",
+    "@types/history": "^4.7.9",
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-typed-fp": "^1.5.0",
+    "eslint-plugin-functional": "^3.7.0",
+    "eslint-plugin-jest": "^24.4.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-prettier": "^3.4.1",
+    "eslint-plugin-react": "^7.25.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonarjs": "^0.10.0",
-    "eslint-plugin-total-functions": "^3.3.0",
+    "eslint-plugin-total-functions": "^4.9.0",
     "history": "^4.10.1",
-    "jest": "^26.6.3",
-    "prettier": "^2.2.1",
+    "jest": "^27.1.0",
+    "prettier": "^2.3.2",
     "total-functions": "^3.0.0",
-    "ts-jest": "^26.5.4",
-    "type-coverage": "^2.17.2",
-    "typedoc": "^0.20.35",
-    "typescript": "^4.2.4"
+    "ts-jest": "^27.0.5",
+    "type-coverage": "^2.18.1",
+    "typedoc": "^0.21.8",
+    "typescript": "^4.4.2"
   },
   "dependencies": {
     "oaf-routing": "^4.0.1"
@@ -53,6 +53,9 @@
     "trailingComma": "all"
   },
   "typeCoverage": {
-    "atLeast": 100
+    "atLeast": 100,
+    "ignoreCatch": false,
+    "strict": true,
+    "detail": true
   }
 }

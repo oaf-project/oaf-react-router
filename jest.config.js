@@ -5,6 +5,7 @@ module.exports = {
   "transform": {
     "^.+\\.ts$": "ts-jest"
   },
+  "testEnvironment": "jsdom",
   "collectCoverage": true,
   "coverageThreshold": {
     "global": {
