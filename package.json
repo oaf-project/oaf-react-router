@@ -27,7 +27,7 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonarjs": "^0.10.0",
     "eslint-plugin-total-functions": "^4.9.0",
-    "history": "^4.10.1",
+    "history": "^5.0.0",
     "jest": "^27.1.0",
     "prettier": "^2.3.2",
     "total-functions": "^3.0.0",
@@ -40,7 +40,7 @@
     "oaf-routing": "^4.0.1"
   },
   "peerDependencies": {
-    "history": "^4.10.1"
+    "history": "^5.0.0"
   },
   "scripts": {
     "build": "tsc",
