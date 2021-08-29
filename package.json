@@ -12,7 +12,7 @@
     "@stryker-mutator/jest-runner": "^3.3.1",
     "@stryker-mutator/typescript": "^3.3.1",
     "@types/history": "^4.7.8",
-    "@types/jest": "^26.0.22",
+    "@types/jest": "^27.0.0",
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.21.0",
     "eslint": "^7.24.0",
