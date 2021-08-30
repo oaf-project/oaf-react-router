@@ -180,11 +180,10 @@ Don't do this! Focus outlines are important for accessibility. See for example:
 * https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html
 * https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/F78
 * http://www.outlinenone.com/
+* https://github.com/twbs/bootstrap/issues/28425
 * Although there is some debate: https://github.com/w3c/wcag/issues/1001
 
-Note that [Bootstrap 4 unfortunately removes these focus outlines](https://github.com/twbs/bootstrap/issues/28425). If you use Bootstrap, you can restore them with [Oaf Bootstrap 4](https://github.com/oaf-project/oaf-bootstrap-4).
-
-All that said, if you absolutely _must_ remove focus outlines (stubborn client, stubborn boss, stubborn designer, whatever), consider using the [`:focus-visible` polyfill](https://github.com/WICG/focus-visible) so focus outlines are only hidden from mouse users, _not_ keyboard users.
+All that said, if you absolutely _must_ remove focus outlines (stubborn client, stubborn boss, stubborn designer, whatever), consider using [`:focus-visible`](https://caniuse.com/css-focus-visible) (and its [polyfill](https://github.com/WICG/focus-visible)) so focus outlines are only hidden from mouse users, _not_ keyboard users.
 
 ## Inspiration and prior art
 
