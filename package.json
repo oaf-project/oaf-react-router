@@ -1,6 +1,6 @@
 {
   "name": "oaf-react-router",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "main": "dist",
   "license": "MIT",
   "repository": {
@@ -46,7 +46,7 @@
     "lint": "eslint src --ext .ts,.tsx",
     "format": "prettier --write '{src,test}/**/*.{ts,tsx}'",
     "documentation": "typedoc --excludeNotExported --excludePrivate --out docs src && cp docs_config.yml ./docs/_config.yml",
-    "release": "yarn build && yarn lint && yarn type-coverage && yarn format-lint && yarn publish && yarn documentation",
+    "release": "yarn build && yarn lint && yarn type-coverage && yarn publish && yarn documentation",
     "test": "jest"
   },
   "prettier": {
