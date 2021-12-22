@@ -6,7 +6,7 @@
 /* eslint-disable functional/no-expression-statement */
 /* eslint-disable functional/functional-parameters */
 
-import { createBrowserHistory, History } from "history";
+import { createBrowserHistory } from "history";
 import { wrapHistory } from ".";
 
 // HACK: wait for history wrapper to update DOM.
@@ -22,13 +22,13 @@ beforeEach(() => {
 describe("oaf-react-router", () => {
   // eslint-disable-next-line jest/expect-expect
   test("doesn't throw when wrapping and unwrapping history", () => {
-    const history: History<unknown> = createBrowserHistory();
+    const history = createBrowserHistory();
     const unwrap = wrapHistory(history);
     unwrap();
   });
 
   test("sets the document title after initial render", async () => {
-    const history: History<unknown> = createBrowserHistory();
+    const history = createBrowserHistory();
     wrapHistory(history, {
       setPageTitle: true,
       documentTitle: () => "test title",
@@ -42,7 +42,7 @@ describe("oaf-react-router", () => {
   });
 
   test("sets the document title after a navigation", async () => {
-    const history: History<unknown> = createBrowserHistory();
+    const history = createBrowserHistory();
     wrapHistory(history, {
       setPageTitle: true,
       documentTitle: () => "test title",
@@ -58,7 +58,7 @@ describe("oaf-react-router", () => {
   });
 
   test("does not set the document title when setPageTitle is false", async () => {
-    const history: History<unknown> = createBrowserHistory();
+    const history = createBrowserHistory();
     wrapHistory(history, {
       setPageTitle: false,
       documentTitle: () => "test title",
@@ -74,7 +74,7 @@ describe("oaf-react-router", () => {
   });
 
   test("leaves focus alone when repairFocus is false", async () => {
-    const history: History<unknown> = createBrowserHistory();
+    const history = createBrowserHistory();
     wrapHistory(history, { repairFocus: false });
 
     const main = document.createElement("main");
@@ -95,7 +95,7 @@ describe("oaf-react-router", () => {
   });
 
   test("moves focus to body when primary focus target cannot be focused", async () => {
-    const history: History<unknown> = createBrowserHistory();
+    const history = createBrowserHistory();
     wrapHistory(history);
 
     const main = document.createElement("main");
@@ -119,7 +119,7 @@ describe("oaf-react-router", () => {
   });
 
   test("moves focus to the primary focus target", async () => {
-    const history: History<unknown> = createBrowserHistory();
+    const history = createBrowserHistory();
     wrapHistory(history);
 
     const main = document.createElement("main");

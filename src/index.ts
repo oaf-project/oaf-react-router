@@ -2,7 +2,7 @@
 /* eslint-disable functional/no-return-void */
 /* eslint-disable functional/no-expression-statement */
 
-import { History, Location, LocationKey } from "history";
+import { History, Location } from "history";
 import {
   createOafRouter,
   defaultSettings as oafRoutingDefaultSettings,
@@ -11,20 +11,15 @@ import {
 
 export { RouterSettings } from "oaf-routing";
 
-export const defaultSettings: RouterSettings<Location<unknown>> = {
+export const defaultSettings: RouterSettings<Location> = {
   ...oafRoutingDefaultSettings,
 };
 
-// HACK we need a way to track where focus and scroll were left on the first loaded page
-// but we won't have an entry in history for this initial page, so we just make up a key.
-const orInitialKey = (key: LocationKey | undefined): LocationKey =>
-  key !== undefined ? key : "initial";
-
-export const wrapHistory = <A = unknown>(
-  history: History<A>,
-  settingsOverrides?: Partial<RouterSettings<Location<A>>>,
+export const wrapHistory = (
+  history: History,
+  settingsOverrides?: Partial<RouterSettings<Location>>,
 ): (() => void) => {
-  const settings: RouterSettings<Location<A>> = {
+  const settings: RouterSettings<Location> = {
     ...defaultSettings,
     ...settingsOverrides,
   };
@@ -42,12 +37,12 @@ export const wrapHistory = <A = unknown>(
   // eslint-disable-next-line functional/no-let
   let previousLocation = initialLocation;
 
-  const unlisten = history.listen((location: Location<A>, action) => {
+  const unlisten = history.listen((update) => {
     // We're the first subscribed listener, so the DOM won't have been updated yet.
     oafRouter.handleLocationWillChange(
-      orInitialKey(previousLocation.key),
-      orInitialKey(location.key),
-      action,
+      previousLocation.key,
+      update.location.key,
+      update.action,
     );
 
     // HACK: We use setTimeout to give React a chance to render before we repair focus.
@@ -56,13 +51,13 @@ export const wrapHistory = <A = unknown>(
       // eslint-disable-next-line @typescript-eslint/no-floating-promises
       oafRouter.handleLocationChanged(
         stablePreviousLocation,
-        location,
-        orInitialKey(location.key),
-        action,
+        update.location,
+        update.location.key,
+        update.action,
       );
     }, settings.renderTimeout);
 
-    previousLocation = location;
+    previousLocation = update.location;
   });
 
   return (): void => {
