@@ -17,16 +17,15 @@ Documentation at https://oaf-project.github.io/oaf-react-router/
 
 ## Compatibility
 
-| React Router | Oaf React Router |
-|--------------|------------------|
-| 6            | 3.0.0            |
-| 5            | 2.1.1            |
+| React Router | [history](https://www.npmjs.com/package/history) | Oaf React Router |
+|--------------|--------------------------------------------------|------------------|
+| 6            | 5                                                | 3.0.0            |
+| 5            | 4                                                | 2.1.1            |
 
 
-* Tested with React Router v5
 * DOM-only (no React Native support)
 * Supports [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) and [`HashRouter`](https://reacttraining.com/react-router/web/api/HashRouter)
-* Works with [Connected React Router](https://github.com/supasate/connected-react-router)
+* Works with [redux-first-history](https://www.npmjs.com/package/redux-first-history) and [Connected React Router](https://github.com/supasate/connected-react-router)
 * Tested in modern browsers, IE 11, Edge
 * For (full) IE support you will need to polyfill [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Browser_compatibility). Using [core-js](https://github.com/zloirock/core-js): `import "core-js/es6/map";`.
 
@@ -115,6 +114,8 @@ npm install oaf-react-router
 
 ## Basic Usage
 
+### React Router 5
+
 ```diff
 - import { BrowserRouter as Router } from "react-router-dom";
 + import { Router } from "react-router-dom";
@@ -129,6 +130,26 @@ ReactDOM.render((
 +  <Router history={history}>
     ...
   </Router>
+), document.getElementById("root"));
+```
+
+### React Router 6
+
+```diff
+- import { BrowserRouter } from "react-router-dom";
++ import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
++ import { createBrowserHistory } from "history";
++ import { wrapHistory } from "oaf-react-router";
+
++ const history = createBrowserHistory(); // or createHashHistory()
++ wrapHistory(history);
+
+ReactDOM.render((
+-  <BrowserRouter>
++  <HistoryRouter history={history}>
+    ...
+-  <BrowserRouter>
++  </HistoryRouter>
 ), document.getElementById("root"));
 ```
 
