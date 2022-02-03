@@ -219,6 +219,10 @@ All that said, if you absolutely _must_ remove focus outlines (stubborn client, 
 * https://reach.tech/router/accessibility
 * https://medium.com/@robdel12/single-page-apps-routers-are-broken-255daa310cf
 
+## Related issues
+
+* https://github.com/alphagov/govuk-frontend/issues/2412
+* https://github.com/remix-run/react-router/issues/5210
 
 ## See also
 * [Oaf Routing](https://github.com/oaf-project/oaf-routing)
