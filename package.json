@@ -42,7 +42,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint": "eslint src --ext .ts,.tsx",
+    "lint": "eslint src --ext .ts,.tsx --report-unused-disable-directives",
     "format": "prettier --write '{src,test}/**/*.{ts,tsx}'",
     "release": "yarn build && yarn lint && yarn type-coverage && yarn publish",
     "test": "jest"
