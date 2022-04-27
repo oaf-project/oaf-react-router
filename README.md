@@ -5,10 +5,6 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/oaf-project/oaf-react-router/badge.svg?targetFile=package.json)](https://snyk.io/test/github/oaf-project/oaf-react-router?targetFile=package.json)
 [![npm](https://img.shields.io/npm/v/oaf-react-router.svg)](https://www.npmjs.com/package/oaf-react-router)
 
-[![dependencies Status](https://david-dm.org/oaf-project/oaf-react-router/status.svg)](https://david-dm.org/oaf-project/oaf-react-router)
-[![devDependencies Status](https://david-dm.org/oaf-project/oaf-react-router/dev-status.svg)](https://david-dm.org/oaf-project/oaf-react-router?type=dev)
-[![peerDependencies Status](https://david-dm.org/oaf-project/oaf-react-router/peer-status.svg)](https://david-dm.org/oaf-project/oaf-react-router?type=peer)
-
 # Oaf React Router
 
 An accessible wrapper for [React Router](https://github.com/remix-run/react-router).
