@@ -27,10 +27,10 @@
     "eslint-plugin-sonarjs": "^0.13.0",
     "eslint-plugin-total-functions": "^5.0.1",
     "history": "^5.2.0",
-    "jest": "^27.4.5",
+    "jest": "^28.0.0",
     "prettier": "^2.5.1",
     "total-functions": "^3.0.0",
-    "ts-jest": "^27.1.2",
+    "ts-jest": "^28.0.0",
     "type-coverage": "^2.19.0",
     "typescript": "^4.5.4"
   },
