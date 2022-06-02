@@ -11,7 +11,7 @@
     "@stryker-mutator/core": "^6.0.2",
     "@stryker-mutator/jest-runner": "^6.0.2",
     "@stryker-mutator/typescript-checker": "^6.0.2",
-    "@types/jest": "^27.0.3",
+    "@types/jest": "^28.0.0",
     "@typescript-eslint/eslint-plugin": "^5.8.0",
     "@typescript-eslint/parser": "^5.8.0",
     "codecov": "^3.8.3",
