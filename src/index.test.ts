@@ -1,7 +1,6 @@
 /* eslint-disable functional/no-return-void */
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable sonarjs/no-duplicate-string */
-/* eslint-disable no-restricted-globals */
 /* eslint-disable functional/immutable-data */
 /* eslint-disable functional/no-expression-statement */
 /* eslint-disable functional/functional-parameters */
