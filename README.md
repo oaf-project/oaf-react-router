@@ -149,13 +149,13 @@ ReactDOM.render((
 
 _Stick to version 3.x.y of oaf-react-router._
 
-As above, but replace
+React Router 6.0 to 6.3 used [history](https://www.npmjs.com/package/history) but 6.4 dropped it. Even with React Router 6.4, redux-first-history continues to use the `history` package. For this reason, redux-first-history provides its own `HistoryRouter`. See https://github.com/salvoravida/redux-first-history#usage. For these reasons, if you're using React Router 6.4+ with redux-first-history you can continue to use version 3.x.y of oaf-react-router (the last version to support `history`). You just need to use `redux-first-history`'s `HistoryRouter`, which boils down to doing the above, but replacing the line
 
 ```diff
 + import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
 ```
 
-with
+with the line
 
 ```diff
 + import { HistoryRouter } from "redux-first-history/rr6";
