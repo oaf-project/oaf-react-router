@@ -18,11 +18,7 @@ An accessible wrapper for [React Router](https://github.com/remix-run/react-rout
 | 5            | 4                                                | 2.1.1            |
 
 
-* DOM-only (no React Native support)
-* Supports [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) and [`HashRouter`](https://reacttraining.com/react-router/web/api/HashRouter)
-* Works with [redux-first-history](https://www.npmjs.com/package/redux-first-history) and [Connected React Router](https://github.com/supasate/connected-react-router)
-* Tested in modern browsers, IE 11, Edge
-* For (full) IE support you will need to polyfill [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map#Browser_compatibility). Using [core-js](https://github.com/zloirock/core-js): `import "core-js/es6/map";`.
+DOM-only (no React Native support).
 
 ## Features
 
