@@ -2,7 +2,7 @@
 /* eslint-disable functional/no-return-void */
 /* eslint-disable functional/no-expression-statement */
 
-import { History, Location } from "history";
+import { Router, Location } from "@remix-run/router";
 import {
   createOafRouter,
   defaultSettings as oafRoutingDefaultSettings,
@@ -15,8 +15,8 @@ export const defaultSettings: RouterSettings<Location> = {
   ...oafRoutingDefaultSettings,
 };
 
-export const wrapHistory = (
-  history: History,
+export const wrapRouter = (
+  router: Router,
   settingsOverrides?: Partial<RouterSettings<Location>>,
 ): (() => void) => {
   const settings: RouterSettings<Location> = {
@@ -26,7 +26,7 @@ export const wrapHistory = (
 
   const oafRouter = createOafRouter(settings, (location) => location.hash);
 
-  const initialLocation = history.location;
+  const initialLocation = router.state.location;
 
   // HACK: We use setTimeout to give React a chance to render before we repair focus.
   setTimeout(() => {
@@ -37,12 +37,12 @@ export const wrapHistory = (
   // eslint-disable-next-line functional/no-let
   let previousLocation = initialLocation;
 
-  const unlisten = history.listen((update) => {
+  const unlisten = router.subscribe((update) => {
     // We're the first subscribed listener, so the DOM won't have been updated yet.
     oafRouter.handleLocationWillChange(
       previousLocation.key,
       update.location.key,
-      update.action,
+      update.historyAction,
     );
 
     // HACK: We use setTimeout to give React a chance to render before we repair focus.
@@ -53,7 +53,7 @@ export const wrapHistory = (
         stablePreviousLocation,
         update.location,
         update.location.key,
-        update.action,
+        update.historyAction,
       );
     }, settings.renderTimeout);
 
