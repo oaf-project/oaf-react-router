@@ -127,7 +127,7 @@ ReactDOM.render((
 ), document.getElementById("root"));
 ```
 
-### React Router 6
+### React Router 6.0 to 6.3
 
 ```diff
 - import { BrowserRouter } from "react-router-dom";
@@ -146,6 +146,10 @@ ReactDOM.render((
 +  </HistoryRouter>
 ), document.getElementById("root"));
 ```
+
+### React Router 6.4+
+
+See https://github.com/oaf-project/oaf-react-router/issues/520
 
 ## Advanced Usage
 
