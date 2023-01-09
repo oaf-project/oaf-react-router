@@ -145,9 +145,46 @@ ReactDOM.render((
 ), document.getElementById("root"));
 ```
 
+### React Router 6.4+ with [redux-first-history](https://github.com/salvoravida/redux-first-history)
+
+_Stick to version 3.x.y of oaf-react-router._
+
+As above, but replace
+
+```diff
++ import { unstable_HistoryRouter as HistoryRouter } from "react-router-dom";
+```
+
+with
+
+```diff
++ import { HistoryRouter } from "redux-first-history/rr6";
+```
+
 ### React Router 6.4+
 
-See https://github.com/oaf-project/oaf-react-router/issues/520
+_Use version 4.0.0 or later of oaf-react-router._
+
+As per https://github.com/remix-run/react-router/issues/9422#issuecomment-1302564759, with the addition of a call to `wrapRouter`.
+
+```diff
+
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
++ import { wrapRouter } from "oaf-react-router";
+
+const router = createBrowserRouter([
+  // match everything with "*"
+  { path: "*", element: <App /> }
+])
+
++ wrapRouter(router);
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+)
+```
 
 ## Advanced Usage
 
@@ -177,6 +214,8 @@ const settings = {
 };
 
 wrapHistory(history, settings);
+
+// Or wrapRouter(router, settings)
 ```
 
 ### A note on setting document title
