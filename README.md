@@ -13,7 +13,8 @@ An accessible wrapper for [React Router](https://github.com/remix-run/react-rout
 
 | React Router | [history](https://www.npmjs.com/package/history) | Oaf React Router |
 |--------------|--------------------------------------------------|------------------|
-| 6.4+         | NA                                               | TODO             |
+| 6.4+         | NA                                               | 4.0.0             |
+| 6.4+ with [redux-first-history](https://github.com/salvoravida/redux-first-history)         | 5                                               | 3.0.1             |
 | 6.0 - 6.3    | 5                                                | 3.0.1            |
 | 5            | 4                                                | 2.1.1            |
 
