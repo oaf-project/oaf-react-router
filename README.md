@@ -161,6 +161,8 @@ with the line
 + import { HistoryRouter } from "redux-first-history/rr6";
 ```
 
+See https://github.com/salvoravida/redux-first-history/issues/95
+
 ### React Router 6.4+
 
 _Use version 4.0.0 or later of oaf-react-router._
