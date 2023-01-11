@@ -8,7 +8,15 @@ import {
   defaultSettings as oafRoutingDefaultSettings,
   RouterSettings,
 } from "oaf-routing";
-import { concatMap, delay, fromEventPattern, scan, tap, defer } from "rxjs";
+import {
+  concatMap,
+  delay,
+  fromEventPattern,
+  scan,
+  tap,
+  defer,
+  filter,
+} from "rxjs";
 
 export { RouterSettings } from "oaf-routing";
 
@@ -86,6 +94,9 @@ export const wrapRouter = (
   // be responsible only for creating and passing in the routerObservable?
   const subscription = routerObservable(router)
     .pipe(
+      // Filter submitted and loading navigation events. We don't want to repair focus, announce navigation or restore scroll/focus
+      // until navigation has settled back to the idle state again. See https://reactrouter.com/en/main/hooks/use-navigation#navigationstate
+      filter((state) => state.navigation.state === "idle"),
       scan<RouterState, StateAccumulator, Pick<StateAccumulator, "state">>(
         (acc, nextState) => ({
           previousState: acc.state,
