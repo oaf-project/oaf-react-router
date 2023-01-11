@@ -41,7 +41,8 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "oaf-routing": "^4.0.2"
+    "oaf-routing": "^4.0.2",
+    "rxjs": "^7.8.0"
   },
   "peerDependencies": {
     "react": "^18.2.0",

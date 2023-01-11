@@ -51,8 +51,13 @@ describe("oaf-react-router", () => {
 
     router.navigate("/");
 
+    // Prove that `delay(settings.renderTimeout)` is putting the title update on the end of the event loop.
+    expect(document.title).toBe("");
+
+    // Pump the event loop via a sneaky `setTimeout`.
     await waitForDomUpdate();
 
+    // Now we should have updated the page title.
     expect(document.title).toBe("test title");
   });
 
