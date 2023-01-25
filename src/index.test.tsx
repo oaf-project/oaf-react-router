@@ -98,7 +98,7 @@ describe("oaf-react-router", () => {
     );
 
     // And another arbitrary element that happens to currently have focus.
-    document.querySelector("button")!.focus();
+    document.querySelector("button")?.focus();
     expect(document.activeElement).toBe(document.querySelector("button"));
 
     // When we navigate using a wrapped router.
@@ -125,10 +125,15 @@ describe("oaf-react-router", () => {
     );
 
     // ...that cannot receive focus (because we sabotaged it)
-    document.querySelector("h1")!.focus = () => {};
+    const h1 = document.querySelector("h1");
+    expect(h1).toBeDefined();
+    // eslint-disable-next-line functional/no-conditional-statement
+    if (h1 !== null) {
+      h1.focus = () => {};
+    }
 
     // And another arbitrary element that happens to currently have focus.
-    document.querySelector("button")!.focus();
+    document.querySelector("button")?.focus();
     expect(document.activeElement).toBe(document.querySelector("button"));
 
     // When we navigate using a wrapped router.
