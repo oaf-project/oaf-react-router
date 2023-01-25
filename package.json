@@ -41,7 +41,8 @@
     "total-functions": "^3.0.0",
     "ts-jest": "^29.0.5",
     "type-coverage": "^2.24.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
     "oaf-routing": "^4.0.2",

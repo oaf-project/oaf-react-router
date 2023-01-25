@@ -15,7 +15,7 @@ module.exports = {
       "statements": 100
     }
   },
-  // We mess with globals (window, document) in the tests so
+  // We mess with globals (window.document.title) in the tests so
   // this keeps them from interfering with each other.
   "maxConcurrency": 1
 }
