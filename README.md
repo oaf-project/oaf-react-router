@@ -31,9 +31,9 @@ DOM-only (no React Native support).
 
 ### Reset scroll and focus after PUSH and REPLACE navigation
 
-[React Router does not reset the window's scroll position or the focused element](https://reacttraining.com/react-router/web/guides/scroll-restoration) after page navigation.
+[React Router historically does not reset the window's scroll position or the focused element](https://reacttraining.com/react-router/web/guides/scroll-restoration) after page navigation (although see this TODO https://github.com/oaf-project/oaf-react-router/issues/521).
 
-The React Router documentation sketches a ["scroll to top" approach](https://reacttraining.com/react-router/web/guides/scroll-restoration/scroll-to-top) that scrolls the window back to the top of the page after navigation, emulating native browser behavior. There are also packages to do this for you, such as [trevorr/react-scroll-manager](https://github.com/trevorr/react-scroll-manager) or [react-router-scroll-top](https://github.com/bluframe/react-router-scroll-top/issues/10). Unfortunately, these approaches address only the scroll half of the question, [ignoring keyboard focus](http://simplyaccessible.com/article/spangular-accessibility/#acc-heading-3):
+The React Router documentation sketched a ["scroll to top" approach](https://reacttraining.com/react-router/web/guides/scroll-restoration/scroll-to-top) that scrolled the window back to the top of the page after navigation, emulating native browser behavior. There are also packages to do this for you, such as [trevorr/react-scroll-manager](https://github.com/trevorr/react-scroll-manager) or [react-router-scroll-top](https://github.com/bluframe/react-router-scroll-top/issues/10). Unfortunately, these approaches address only the scroll half of the question, [ignoring keyboard focus](http://simplyaccessible.com/article/spangular-accessibility/#acc-heading-3):
 
 > One of the unique features of single page applications that can create challenges for people using screen readers is that there’s never a page refresh, only view refreshes. As a result, the focused element often disappears from the interface, and the person using the screen reader is left searching for clues as to what happened and what’s now showing in the application view. Places where focus is commonly lost include: page changes, item deleting, modal closing, and expanding and closing record details.
 
@@ -187,6 +187,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>
 )
 ```
+
+Detailed examples are available in the tests: https://github.com/oaf-project/oaf-react-router/blob/master/src/index.test.tsx
 
 ## Advanced Usage
 
