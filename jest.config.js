@@ -3,7 +3,7 @@ module.exports = {
     "<rootDir>/src"
   ],
   "transform": {
-    "^.+\\.ts$": "ts-jest"
+    "^.+\\.tsx?$": "ts-jest"
   },
   "testEnvironment": "jsdom",
   "collectCoverage": true,
