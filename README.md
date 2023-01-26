@@ -7,7 +7,7 @@
 
 # Oaf React Router
 
-An accessible wrapper for [React Router](https://github.com/remix-run/react-router).
+An accessible wrapper for [React Router](https://github.com/remix-run/react-router), built on [oaf-routing](https://github.com/oaf-project/oaf-routing).
 
 ## Compatibility
 
