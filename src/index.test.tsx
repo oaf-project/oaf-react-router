@@ -39,6 +39,20 @@ describe("oaf-react-router", () => {
     expect(() => unwrap()).not.toThrow();
   });
 
+  test("disables native scroll restoration", () => {
+    const router = createBrowserRouter([{}]);
+
+    expect(window.history.scrollRestoration).toBeUndefined();
+
+    const unwrap = wrapRouter(router, { disableAutoScrollRestoration: true });
+
+    expect(window.history.scrollRestoration).toEqual("manual");
+
+    unwrap();
+
+    expect(window.history.scrollRestoration).toBeUndefined();
+  });
+
   test("sets the document title after initial render", async () => {
     const router = createBrowserRouter([{}]);
     wrapRouter(router, {

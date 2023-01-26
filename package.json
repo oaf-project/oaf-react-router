@@ -12,13 +12,13 @@
     "@stryker-mutator/jest-runner": "^6.3.1",
     "@stryker-mutator/typescript-checker": "^6.3.1",
     "@testing-library/react": "^13.4.0",
-    "@types/jest": "^29.2.6",
+    "@types/jest": "^29.4.0",
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "codecov": "^3.8.3",
     "eslint": "^8.32.0",
-    "eslint-config-agile-digital": "^1.4.0",
+    "eslint-config-agile-digital": "^1.6.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-typed-fp": "^3.3.0",
     "eslint-plugin-functional": "^4.4.1",
@@ -45,7 +45,7 @@
     "whatwg-fetch": "^3.6.2"
   },
   "dependencies": {
-    "oaf-routing": "^4.0.2",
+    "oaf-routing": "^4.1.0",
     "rxjs": "^7.8.0"
   },
   "peerDependencies": {
