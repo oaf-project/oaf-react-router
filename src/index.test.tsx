@@ -176,7 +176,7 @@ describe("oaf-react-router", () => {
     );
   });
 
-  test("moves focus to the primary focus target", async () => {
+  test("moves focus to the primary focus target and announce navigation to screen readers", async () => {
     // Given a default focus target (an h1 element within main).
     const router = createBrowserRouter([
       {
@@ -198,7 +198,12 @@ describe("oaf-react-router", () => {
         loader: () => Promise.resolve(null),
       },
     ]);
-    wrapRouter(router);
+
+    // And a mocked announce function.
+    const mockAnnounce = jest.fn();
+    wrapRouter(router, {
+      announce: mockAnnounce,
+    });
 
     render(
       <React.StrictMode>
@@ -218,6 +223,7 @@ describe("oaf-react-router", () => {
       expect(document.activeElement).toBe(document.querySelector("h1")),
     );
 
-    // TODO assert that navigation screen reader announcements were made only for the `idle` states, not the `loading` states.
+    // And a screen reader announcement was made only for the `idle` state, not the `loading` state.
+    expect(mockAnnounce.mock.calls).toHaveLength(1);
   });
 });
