@@ -200,14 +200,7 @@ describe("oaf-react-router", () => {
     ]);
 
     // And a mocked announce function.
-    const mockAnnounce = jest.fn(function (
-      this: unknown,
-      _message: string,
-      _announcementsDivId?: string,
-      _setMessageTimeout?: number,
-      _clearMessageTimeout?: number,
-      _politeness?: string,
-    ) {
+    const mockAnnounce = jest.fn(function (this: unknown) {
       return Promise.resolve(undefined);
     });
     wrapRouter(router, {
