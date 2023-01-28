@@ -304,4 +304,45 @@ describe("oaf-react-router", () => {
     // Then focus has been moved back to the button.
     expect(document.activeElement).toBe(document.querySelector("button"));
   });
+
+  test("stops making changes after unsubscribing", async () => {
+    // Given a router.
+    const router = createBrowserRouter([
+      {
+        path: "*",
+        element: <div />,
+      },
+    ]);
+
+    // And a mocked announce function.
+    const mockAnnounce = jest.fn(function (this: unknown) {
+      return Promise.resolve(undefined);
+    });
+
+    // And a wrapped router.
+    const unsubscribe = wrapRouter(router, {
+      announce: mockAnnounce,
+    });
+
+    render(
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>,
+    );
+
+    // When we navigate.
+    await act(() => router.navigate({ pathname: "/" }));
+
+    // Then the navigation is announced.
+    expect(mockAnnounce.mock.calls).toHaveLength(1);
+
+    // But when we unsubscribe.
+    unsubscribe();
+
+    // And navigate again.
+    await act(() => router.navigate({ pathname: "/" }));
+
+    // Then no more announcements are made.
+    expect(mockAnnounce.mock.calls).toHaveLength(1);
+  });
 });
