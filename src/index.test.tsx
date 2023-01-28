@@ -5,7 +5,7 @@
 /* eslint-disable functional/functional-parameters */
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { defaultSettings, wrapRouter } from ".";
+import { wrapRouter } from ".";
 import { act, cleanup, render, waitFor } from "@testing-library/react";
 import React from "react";
 
@@ -20,6 +20,9 @@ beforeEach(() => {
 });
 
 afterEach(cleanup);
+
+const setTimeoutPromise = () =>
+  new Promise((resolve) => setTimeout(() => resolve(undefined)));
 
 describe("oaf-react-router", () => {
   test("doesn't throw when wrapping and unwrapping a browser router", () => {
@@ -80,7 +83,7 @@ describe("oaf-react-router", () => {
     // Prove that `delay(settings.renderTimeout)` is putting the title update on the end of the event loop.
     expect(document.title).toBe("");
 
-    await new Promise((resolve) => setTimeout(() => resolve(undefined)));
+    await setTimeoutPromise();
 
     // Now, after waiting, we should have updated the page title.
     await waitFor(() => expect(document.title).toBe("test title a"));
@@ -98,7 +101,7 @@ describe("oaf-react-router", () => {
     await router.navigate("/");
 
     // We can't just use waitFor with a negative condition that we expect to _remain_ negative after setTimeouts have been allowed to run.
-    await new Promise((resolve) => setTimeout(() => resolve(undefined)));
+    await setTimeoutPromise();
 
     await waitFor(() => expect(document.title).toBe(""));
   });
@@ -202,7 +205,9 @@ describe("oaf-react-router", () => {
     ]);
 
     // And a mocked announce function.
-    const mockAnnounce = jest.fn(defaultSettings.announce);
+    const mockAnnounce = jest.fn(function (this: unknown) {
+      return Promise.resolve(undefined);
+    });
     wrapRouter(router, {
       announce: mockAnnounce,
     });
@@ -277,36 +282,26 @@ describe("oaf-react-router", () => {
 
     // And then navigated away.
     await act(() => router.navigate({ pathname: "/two" }));
-    await new Promise((resolve) => setTimeout(() => resolve(undefined)));
-    const h1 = document.querySelector("h1");
-    // eslint-disable-next-line functional/no-conditional-statement
-    if (h1 === null) {
-      // eslint-disable-next-line functional/no-throw-statement
-      throw new Error("Expected h1 not found in DOM");
-    }
-    expect(document.activeElement).toBe(h1);
+
+    // And then waited for React to render.
+    await waitFor(() =>
+      setTimeoutPromise().then(() =>
+        expect(document.querySelector("h1")).not.toBeNull(),
+      ),
+    );
+    expect(document.activeElement).toBe(document.querySelector("h1"));
 
     // When we navigate back (POP).
     await act(() => router.navigate(-1));
 
-    // TODO: avoid having to jump on the event of the event queue thrice in succession...
-    await act(
-      () => new Promise((resolve) => setTimeout(() => resolve(undefined))),
-    );
-    await act(
-      () => new Promise((resolve) => setTimeout(() => resolve(undefined))),
-    );
-    await act(
-      () => new Promise((resolve) => setTimeout(() => resolve(undefined))),
+    // And wait for React to render.
+    await waitFor(() =>
+      setTimeoutPromise().then(() =>
+        expect(document.querySelector("button")).not.toBeNull(),
+      ),
     );
 
-    // Then focus is placed back on the button, where it was when we navigated away.
-    const button2 = document.querySelector("button");
-    // eslint-disable-next-line functional/no-conditional-statement
-    if (button2 === null) {
-      // eslint-disable-next-line functional/no-throw-statement
-      throw new Error("Expected button2 not found in DOM");
-    }
-    await waitFor(() => expect(document.activeElement).toBe(button2));
+    // Then focus has been moved back to the button.
+    expect(document.activeElement).toBe(document.querySelector("button"));
   });
 });
