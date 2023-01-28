@@ -1,12 +1,11 @@
 /* eslint-disable functional/no-return-void */
 /* eslint-disable @typescript-eslint/no-empty-function */
-
 /* eslint-disable functional/immutable-data */
 /* eslint-disable functional/no-expression-statement */
 /* eslint-disable functional/functional-parameters */
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { wrapRouter } from ".";
+import { defaultSettings, wrapRouter } from ".";
 import { act, cleanup, render, waitFor } from "@testing-library/react";
 import React from "react";
 
@@ -14,6 +13,8 @@ import React from "react";
 import "whatwg-fetch";
 
 beforeEach(() => {
+  // Avoid `Error: Not implemented: window.scrollTo`
+  window.scrollTo = () => {};
   // oaf-react-router has a side-effect of manipulating document title (i.e. global mutable state).
   window.document.title = "";
 });
@@ -189,6 +190,7 @@ describe("oaf-react-router", () => {
         element: (
           <main>
             <h1></h1>
+            <button></button>
           </main>
         ),
         // The presence of these loaders means that the router will emit loading states before it
@@ -200,9 +202,7 @@ describe("oaf-react-router", () => {
     ]);
 
     // And a mocked announce function.
-    const mockAnnounce = jest.fn(function (this: unknown) {
-      return Promise.resolve(undefined);
-    });
+    const mockAnnounce = jest.fn(defaultSettings.announce);
     wrapRouter(router, {
       announce: mockAnnounce,
     });
@@ -227,5 +227,86 @@ describe("oaf-react-router", () => {
 
     // And a screen reader announcement was made only for the `idle` state, not the `loading` state.
     expect(mockAnnounce.mock.calls).toHaveLength(1);
+  });
+
+  test("restores focus after a POP navigation", async () => {
+    // Given a route.
+    const router = createBrowserRouter([
+      {
+        path: "/one",
+        element: (
+          <main>
+            <h1>Page one</h1>
+            <button></button>
+          </main>
+        ),
+      },
+      {
+        path: "/two",
+        element: (
+          <main>
+            <h1>Page two</h1>
+          </main>
+        ),
+      },
+      {
+        path: "*",
+        element: <div>Not found</div>,
+      },
+    ]);
+
+    // And a wrapped router that restores page state on pop.
+    wrapRouter(router, { restorePageStateOnPop: true });
+
+    render(
+      <React.StrictMode>
+        <RouterProvider router={router} />
+      </React.StrictMode>,
+    );
+
+    // And given we have previously focused the button.
+    await act(() => router.navigate({ pathname: "/one" }));
+    const button = document.querySelector("button");
+    // eslint-disable-next-line functional/no-conditional-statement
+    if (button === null) {
+      // eslint-disable-next-line functional/no-throw-statement
+      throw new Error("Expected button not found in DOM");
+    }
+    button.focus();
+    expect(document.activeElement).toBe(button);
+
+    // And then navigated away.
+    await act(() => router.navigate({ pathname: "/two" }));
+    await new Promise((resolve) => setTimeout(() => resolve(undefined)));
+    const h1 = document.querySelector("h1");
+    // eslint-disable-next-line functional/no-conditional-statement
+    if (h1 === null) {
+      // eslint-disable-next-line functional/no-throw-statement
+      throw new Error("Expected h1 not found in DOM");
+    }
+    expect(document.activeElement).toBe(h1);
+
+    // When we navigate back (POP).
+    await act(() => router.navigate(-1));
+
+    // TODO: avoid having to jump on the event of the event queue thrice in succession...
+    await act(
+      () => new Promise((resolve) => setTimeout(() => resolve(undefined))),
+    );
+    await act(
+      () => new Promise((resolve) => setTimeout(() => resolve(undefined))),
+    );
+    await act(
+      () => new Promise((resolve) => setTimeout(() => resolve(undefined))),
+    );
+
+    // Then focus is placed back on the button, where it was when we navigated away.
+    const button2 = document.querySelector("button");
+    // eslint-disable-next-line functional/no-conditional-statement
+    if (button2 === null) {
+      // eslint-disable-next-line functional/no-throw-statement
+      throw new Error("Expected button2 not found in DOM");
+    }
+    await waitFor(() => expect(document.activeElement).toBe(button2));
   });
 });
