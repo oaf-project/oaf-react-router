@@ -334,13 +334,16 @@ describe("oaf-react-router", () => {
     await act(() => router.navigate({ pathname: "/" }));
 
     // Then the navigation is announced.
-    expect(mockAnnounce.mock.calls).toHaveLength(1);
+    await waitFor(() => expect(mockAnnounce.mock.calls).toHaveLength(1));
 
     // But when we unsubscribe.
     unsubscribe();
 
     // And navigate again.
     await act(() => router.navigate({ pathname: "/" }));
+
+    // We can't just use waitFor with a negative condition that we expect to _remain_ negative after setTimeouts have been allowed to run.
+    await setTimeoutPromise();
 
     // Then no more announcements are made.
     expect(mockAnnounce.mock.calls).toHaveLength(1);
