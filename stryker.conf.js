@@ -3,8 +3,9 @@ module.exports = {
   reporters: ["clear-text", "progress", "dashboard"],
   testRunner: "jest",
   coverageAnalysis: "perTest",
-  // checkers: ["typescript"],
+  checkers: ["typescript"],
   tsconfigFile: "tsconfig.json",
-  mutate: ["src/**/*.ts", "!src/**/*.test.ts"],
-  thresholds: { high: 80, low: 60, break: 40 }
+  mutate: ["src/**/*.ts", "!src/**/*.test.tsx"],
+  thresholds: { high: 80, low: 60, break: 40 },
+  timeoutMS: 10000,
 };
