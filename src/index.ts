@@ -1,4 +1,5 @@
-/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/prefer-immutable-types */
+/* eslint-disable functional/no-expression-statements */
 /* eslint-disable functional/no-return-void */
 /* eslint-disable functional/functional-parameters */
 
@@ -85,6 +86,7 @@ export const wrapRouter = (
    * This type allows our router subscription to hang onto that little bit of state
    * (the previous router state) via RxJS's `scan`.
    */
+  // eslint-disable-next-line functional/type-declaration-immutability
   type StateAccumulator = {
     readonly previousState: RouterState;
     readonly state: RouterState;

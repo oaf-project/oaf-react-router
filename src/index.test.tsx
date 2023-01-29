@@ -1,7 +1,8 @@
+/* eslint-disable functional/prefer-immutable-types */
 /* eslint-disable functional/no-return-void */
 /* eslint-disable @typescript-eslint/no-empty-function */
 /* eslint-disable functional/immutable-data */
-/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/no-expression-statements */
 /* eslint-disable functional/functional-parameters */
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -159,7 +160,7 @@ describe("oaf-react-router", () => {
     // ...that cannot receive focus (because we sabotaged it)
     const h1 = document.querySelector("h1");
     expect(h1).toBeDefined();
-    // eslint-disable-next-line functional/no-conditional-statement
+    // eslint-disable-next-line functional/no-conditional-statements
     if (h1 !== null) {
       h1.focus = () => {};
     }
@@ -272,9 +273,9 @@ describe("oaf-react-router", () => {
     // And given we have previously focused the button.
     await act(() => router.navigate({ pathname: "/one" }));
     const button = document.querySelector("button");
-    // eslint-disable-next-line functional/no-conditional-statement
+    // eslint-disable-next-line functional/no-conditional-statements
     if (button === null) {
-      // eslint-disable-next-line functional/no-throw-statement
+      // eslint-disable-next-line functional/no-throw-statements
       throw new Error("Expected button not found in DOM");
     }
     button.focus();
