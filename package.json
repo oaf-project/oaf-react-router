@@ -11,7 +11,7 @@
     "@stryker-mutator/core": "^6.3.1",
     "@stryker-mutator/jest-runner": "^6.3.1",
     "@stryker-mutator/typescript-checker": "^6.3.1",
-    "@testing-library/react": "^13.4.0",
+    "@testing-library/react": "^14.0.0",
     "@types/jest": "^29.4.0",
     "@types/react-dom": "^18.0.10",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
