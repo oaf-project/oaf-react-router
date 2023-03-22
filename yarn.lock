@@ -1969,10 +1969,10 @@ escodegen@^2.0.0:
   optionalDependencies:
     source-map "~0.6.1"
 
-eslint-config-agile-digital@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/eslint-config-agile-digital/-/eslint-config-agile-digital-2.0.1.tgz#cc73e4dff9afc075bbb33b0698e4d7d0625b75be"
-  integrity sha512-LPfIkg54D7aXnJX+zO4FpZ6oL/ZSGZpU41HB3qKpO4nWyRgqkREA32+voFGhfEd0Qx++C9bHN/GGWKyNyBeQzA==
+eslint-config-agile-digital@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-agile-digital/-/eslint-config-agile-digital-3.0.0.tgz#1571c89101a46709758ab31d1064d6d0113efce3"
+  integrity sha512-ThBgwUlAvmrHhs1nYh2jCoLgEWHz64cjZaDRVV5DrMknxhclINyuBhkQ2xIKz9TlNsnk9C4LMGRxltaT4Rk5LQ==
 
 eslint-config-prettier@^8.6.0:
   version "8.6.0"
