@@ -1974,10 +1974,10 @@ eslint-config-agile-digital@^2.0.1:
   resolved "https://registry.yarnpkg.com/eslint-config-agile-digital/-/eslint-config-agile-digital-2.0.1.tgz#cc73e4dff9afc075bbb33b0698e4d7d0625b75be"
   integrity sha512-LPfIkg54D7aXnJX+zO4FpZ6oL/ZSGZpU41HB3qKpO4nWyRgqkREA32+voFGhfEd0Qx++C9bHN/GGWKyNyBeQzA==
 
-eslint-config-prettier@^8.6.0:
-  version "8.6.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.6.0.tgz#dec1d29ab728f4fa63061774e1672ac4e363d207"
-  integrity sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==
+eslint-config-prettier@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-9.0.0.tgz#eb25485946dd0c66cd216a46232dc05451518d1f"
+  integrity sha512-IcJsTkJae2S35pRsRAwoCE+925rJJStOdkKnLVgtE+tEpqU0EVVM7OqrwxqgptKdX29NUwC82I5pXsGFIgSevw==
 
 eslint-config-typed-fp@^4.0.2:
   version "4.0.2"
