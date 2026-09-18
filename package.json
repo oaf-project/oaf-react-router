@@ -17,7 +17,7 @@
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "codecov": "^3.8.3",
-    "eslint": "^8.33.0",
+    "eslint": "^10.0.0",
     "eslint-config-agile-digital": "^2.0.1",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-typed-fp": "^4.0.2",
